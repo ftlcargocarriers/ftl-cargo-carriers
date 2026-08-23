@@ -1,2025 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="FTL Cargo Carriers - Professional all India transport services from Bangalore and South India. 15+ years experience and 1000+ deliveries completed.">
-<meta name="keywords" content="FTL Cargo Carriers, transport Bangalore, logistics Bangalore, all India transport, truck transport, freight transport, Attibele transport">
-<meta name="author" content="FTL Cargo Carriers">
-
-<title>FTL Cargo Carriers | Professional All India Transport</title>
-
-<style>
-
-/* =========================
-   RESET & GLOBAL
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    color:#151515;
-    overflow-x:hidden;
-}
-
-:root{
-    --orange:#ff8a00;
-    --orange-dark:#df7000;
-    --black:#0b0d10;
-    --dark:#11151a;
-    --dark2:#181d23;
-    --white:#ffffff;
-    --light:#f5f7fa;
-    --gray:#68717c;
-    --border:#e6e9ed;
-    --green:#25D366;
-    --blue:#1769aa;
-}
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-section{
-    padding:90px 0;
-}
-
-a{
-    text-decoration:none;
-}
-
-/* =========================
-   TOP BAR
-========================= */
-
-.topbar{
-    background:#080a0c;
-    color:#cbd0d6;
-    padding:9px 5%;
-    font-size:13px;
-}
-
-.topbar-inner{
-    max-width:1180px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.topbar a{
-    color:#fff;
-}
-
-.topbar strong{
-    color:var(--orange);
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:5000;
-    background:rgba(11,13,16,.97);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-}
-
-.nav-inner{
-    width:min(1180px,92%);
-    margin:auto;
-    min-height:74px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.logo{
-    color:#fff;
-    font-weight:900;
-    font-size:20px;
-    letter-spacing:.3px;
-    white-space:nowrap;
-}
-
-.logo span{
-    color:var(--orange);
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:26px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#e9edf1;
-    font-size:14px;
-    font-weight:700;
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    color:var(--orange);
-}
-
-.nav-quote{
-    background:var(--orange);
-    color:#fff !important;
-    padding:11px 17px;
-    border-radius:7px;
-}
-
-.nav-quote:hover{
-    background:var(--orange-dark);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:720px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-    color:#fff;
-
-    background:
-        linear-gradient(90deg,
-        rgba(5,8,11,.94) 0%,
-        rgba(5,8,11,.82) 43%,
-        rgba(5,8,11,.38) 100%),
-        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=88");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:auto 0 0 0;
-    height:130px;
-    background:linear-gradient(transparent,#f5f7fa);
-    z-index:1;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    width:min(1180px,92%);
-    margin:auto;
-    padding:80px 0;
-}
-
-.hero-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    padding:9px 14px;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.08);
-    border-radius:30px;
-    color:#fff;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:25px;
-}
-
-.hero-tag span{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--orange);
-    display:block;
-    box-shadow:0 0 12px var(--orange);
-}
-
-.hero h1{
-    max-width:850px;
-    font-size:clamp(43px,6vw,76px);
-    line-height:1.02;
-    letter-spacing:-2px;
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:var(--orange);
-}
-
-.hero-subtitle{
-    max-width:720px;
-    color:#e4e8ec;
-    font-size:19px;
-    line-height:1.75;
-    margin-bottom:30px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:15px 23px;
-    border-radius:7px;
-    font-weight:800;
-    font-size:15px;
-    border:1px solid transparent;
-    transition:.25s;
-}
-
-.btn-orange{
-    background:var(--orange);
-    color:#fff;
-}
-
-.btn-orange:hover{
-    background:var(--orange-dark);
-    transform:translateY(-2px);
-}
-
-.btn-outline{
-    background:rgba(255,255,255,.08);
-    color:#fff;
-    border-color:rgba(255,255,255,.35);
-}
-
-.btn-outline:hover{
-    background:#fff;
-    color:#111;
-}
-
-.btn-dark{
-    background:#111;
-    color:#fff;
-}
-
-.btn-green{
-    background:var(--green);
-    color:#fff;
-}
-
-/* =========================
-   TRUST STATS
-========================= */
-
-.stats-wrap{
-    position:relative;
-    z-index:10;
-    margin-top:-55px;
-}
-
-.stats{
-    background:#fff;
-    border-radius:14px;
-    box-shadow:0 15px 45px rgba(0,0,0,.12);
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    overflow:hidden;
-    border:1px solid var(--border);
-}
-
-.stat{
-    padding:28px 20px;
-    text-align:center;
-    border-right:1px solid var(--border);
-}
-
-.stat:last-child{
-    border-right:0;
-}
-
-.stat-number{
-    color:var(--orange);
-    font-size:32px;
-    font-weight:900;
-    margin-bottom:5px;
-}
-
-.stat-label{
-    color:var(--gray);
-    font-size:13px;
-    font-weight:700;
-}
-
-/* =========================
-   SECTION HEADINGS
-========================= */
-
-.section-heading{
-    max-width:760px;
-    margin:0 auto 50px;
-    text-align:center;
-}
-
-.eyebrow{
-    color:var(--orange-dark);
-    font-size:13px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:12px;
-}
-
-.section-heading h2{
-    font-size:clamp(32px,4vw,48px);
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.section-heading p{
-    color:var(--gray);
-    font-size:17px;
-    line-height:1.7;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:55px;
-    align-items:center;
-}
-
-.about-image{
-    min-height:480px;
-    border-radius:18px;
-    overflow:hidden;
-    background:
-        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
-        url("https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=1200&q=85");
-    background-size:cover;
-    background-position:center;
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-.about-content h3{
-    font-size:32px;
-    margin-bottom:18px;
-}
-
-.about-content p{
-    color:var(--gray);
-    line-height:1.85;
-    margin-bottom:18px;
-}
-
-.check-list{
-    list-style:none;
-    margin:25px 0;
-}
-
-.check-list li{
-    margin:13px 0;
-    font-weight:700;
-}
-
-.check-list li::before{
-    content:"✓";
-    color:var(--orange);
-    font-weight:900;
-    margin-right:10px;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-    background:#fff;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.service-card{
-    padding:32px 25px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:14px;
-    transition:.3s;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 18px 35px rgba(0,0,0,.1);
-    border-color:#ffd09a;
-}
-
-.service-icon{
-    width:55px;
-    height:55px;
-    border-radius:12px;
-    background:#fff3e2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    margin-bottom:22px;
-}
-
-.service-card h3{
-    font-size:20px;
-    margin-bottom:12px;
-}
-
-.service-card p{
-    color:var(--gray);
-    line-height:1.65;
-    font-size:15px;
-}
-
-/* =========================
-   ROUTES
-========================= */
-
-.routes{
-    background:#f5f7fa;
-}
-
-.route-grid{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:13px;
-}
-
-.route{
-    background:#fff;
-    border:1px solid var(--border);
-    padding:20px 15px;
-    border-radius:10px;
-    font-weight:800;
-    font-size:14px;
-    transition:.25s;
-}
-
-.route:hover{
-    border-color:var(--orange);
-    transform:translateY(-3px);
-}
-
-.route small{
-    display:block;
-    color:var(--orange-dark);
-    margin-top:7px;
-    font-size:11px;
-}
-
-/* =========================
-   VEHICLES
-========================= */
-
-.vehicle-section{
-    background:#101419;
-    color:#fff;
-}
-
-.vehicle-section .section-heading p{
-    color:#aeb6bf;
-}
-
-.vehicle-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.vehicle-card{
-    min-height:160px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.1);
-    background:linear-gradient(145deg,#1a2027,#101419);
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    position:relative;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.vehicle-card:hover{
-    transform:translateY(-5px);
-    border-color:var(--orange);
-}
-
-.vehicle-card::before{
-    content:"🚛";
-    position:absolute;
-    right:18px;
-    top:15px;
-    font-size:42px;
-    opacity:.18;
-}
-
-.vehicle-card h3{
-    color:#fff;
-    font-size:20px;
-}
-
-.vehicle-card p{
-    color:#9fa8b2;
-    margin-top:7px;
-    font-size:13px;
-}
-
-/* =========================
-   WHY US
-========================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.why-card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:30px;
-}
-
-.why-card .big-icon{
-    font-size:35px;
-    margin-bottom:17px;
-}
-
-.why-card h3{
-    margin-bottom:10px;
-}
-
-.why-card p{
-    color:var(--gray);
-    line-height:1.65;
-}
-
-/* =========================
-   REVIEWS
-========================= */
-
-.reviews{
-    background:#fff;
-}
-
-.review-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.review{
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:30px;
-    background:#fff;
-}
-
-.stars{
-    color:#f5a400;
-    letter-spacing:3px;
-    font-size:18px;
-    margin-bottom:18px;
-}
-
-.review p{
-    color:#525b65;
-    line-height:1.75;
-    margin-bottom:20px;
-}
-
-.reviewer{
-    font-weight:900;
-}
-
-.reviewer span{
-    display:block;
-    color:#8a929b;
-    font-size:12px;
-    margin-top:4px;
-}
-
-/* =========================
-   LOCATION
-========================= */
-
-.location{
-    background:#f5f7fa;
-}
-
-.location-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:25px;
-}
-
-.address-card{
-    background:#101419;
-    color:#fff;
-    border-radius:16px;
-    padding:35px;
-}
-
-.address-card h3{
-    color:var(--orange);
-    font-size:27px;
-    margin-bottom:22px;
-}
-
-.address-card p{
-    color:#d5dae0;
-    line-height:1.8;
-    margin-bottom:22px;
-}
-
-.map{
-    min-height:420px;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-    background:#ddd;
-}
-
-.map iframe{
-    width:100%;
-    height:100%;
-    min-height:420px;
-    border:0;
-}
-
-/* =========================
-   QUOTE
-========================= */
-
-.quote-section{
-    background:
-        linear-gradient(135deg,#11161c,#202830);
-    color:#fff;
-}
-
-.quote-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:55px;
-    align-items:start;
-}
-
-.quote-info h2{
-    font-size:42px;
-    line-height:1.15;
-    margin-bottom:18px;
-}
-
-.quote-info h2 span{
-    color:var(--orange);
-}
-
-.quote-info p{
-    color:#b9c1ca;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.contact-lines{
-    list-style:none;
-}
-
-.contact-lines li{
-    margin:15px 0;
-    font-weight:700;
-}
-
-.contact-lines a{
-    color:#fff;
-}
-
-.quote-form{
-    background:#fff;
-    color:#111;
-    border-radius:16px;
-    padding:32px;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
-}
-
-.form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.form-group{
-    margin-bottom:16px;
-}
-
-.form-group label{
-    display:block;
-    font-size:13px;
-    font-weight:800;
-    margin-bottom:7px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    border:1px solid #d9dde2;
-    border-radius:8px;
-    padding:13px;
-    font-size:15px;
-    outline:none;
-    font-family:inherit;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--orange);
-}
-
-.form-group textarea{
-    resize:vertical;
-    min-height:105px;
-}
-
-.full{
-    width:100%;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#080a0c;
-    color:#aeb6bf;
-    padding:45px 0 25px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:35px;
-    padding-bottom:35px;
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.footer-brand h3{
-    color:#fff;
-    font-size:22px;
-    margin-bottom:12px;
-}
-
-.footer-brand h3 span{
-    color:var(--orange);
-}
-
-.footer-brand p,
-.footer-col p{
-    line-height:1.7;
-    font-size:14px;
-}
-
-.footer-col h4{
-    color:#fff;
-    margin-bottom:14px;
-}
-
-.footer-col a{
-    color:#aeb6bf;
-    display:block;
-    margin:9px 0;
-    font-size:14px;
-}
-
-.footer-col a:hover{
-    color:var(--orange);
-}
-
-.copyright{
-    text-align:center;
-    padding-top:23px;
-    font-size:13px;
-}
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
-
-.whatsapp{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#25D366;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    box-shadow:0 8px 25px rgba(0,0,0,.25);
-    transition:.25s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.08);
-}
-
-.whatsapp svg{
-    width:30px;
-    height:30px;
-    fill:white;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:950px){
-
-    .nav-links{
-        gap:14px;
-    }
-
-    .service-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .route-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .vehicle-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about-grid,
-    .location-grid,
-    .quote-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-image{
-        min-height:380px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:700px){
-
-    section{
-        padding:65px 0;
-    }
-
-    .topbar{
-        display:none;
-    }
-
-    .nav-inner{
-        min-height:68px;
-    }
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        min-height:650px;
-        background-position:60% center;
-    }
-
-    .hero h1{
-        font-size:45px;
-        letter-spacing:-1px;
-    }
-
-    .hero-subtitle{
-        font-size:16px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:stretch;
-        max-width:330px;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stat{
-        border-bottom:1px solid var(--border);
-    }
-
-    .stat:nth-child(2){
-        border-right:0;
-    }
-
-    .stat-number{
-        font-size:25px;
-    }
-
-    .service-grid,
-    .why-grid,
-    .review-grid,
-    .vehicle-grid{
-        grid-template-columns:1fr;
-    }
-
-    .route-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .form-row{
-        grid-template-columns:1fr;
-    }
-
-    .quote-info h2{
-        font-size:34px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .logo{
-        font-size:17px;
-    }
-
-    .whatsapp{
-        width:55px;
-        height:55px;
-        right:16px;
-        bottom:16px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTL Cargo Carriers | Premium All-India Logistics & Transport</title>
+    <meta name="description" content="FTL Cargo Carriers - 15+ years of reliable logistics and transport services across India. 1000+ deliveries completed. Office at Attibele, Bangalore.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',
+                            accent: '#F28C00',
+                            accentLight: '#FFB52E',
+                            slate: '#1E293B',
+                            light: '#FFF8ED',
+                            gray: '#66707A',
+                            green: '#25D366'
+                        }
+                    },
+                    keyframes: {
+                        truckMove: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100vw)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(25px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        'truck-drive': 'truckMove 18s linear infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.92)), 
+                        url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1920&q=90') center/cover no-repeat fixed;
+        }
+        .container-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-brand-accent selection:text-white">
 
-<body>
+    <header class="sticky top-0 z-50 bg-brand-navy/95 backdrop-blur-md border-b border-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-accent p-2.5 rounded-xl text-white shadow-lg shadow-orange-500/20">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight block leading-none">FTL CARGO</span>
+                        <span class="text-xs text-brand-accentLight font-semibold tracking-widest uppercase">Carriers</span>
+                    </div>
+                </div>
 
-<!-- TOP BAR -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-bold tracking-wide">
+                    <a href="#home" class="hover:text-brand-accent transition-colors">Home</a>
+                    <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+                    <a href="#services" class="hover:text-brand-accent transition-colors">Services</a>
+                    <a href="#vehicles" class="hover:text-brand-accent transition-colors">Vehicles</a>
+                    <a href="#reviews" class="hover:text-brand-accent transition-colors">Reviews</a>
+                    <a href="#location" class="hover:text-brand-accent transition-colors">Location</a>
+                </nav>
 
-<div class="topbar">
-    <div class="topbar-inner">
-        <div>
-            <strong>15+ YEARS</strong> of transport experience
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="tel:+919809737666" class="flex items-center space-x-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white px-3 py-2 rounded-xl border border-slate-700 transition">
+                        <i class="fa-solid fa-phone text-brand-accent"></i>
+                        <span>+91 98097 37666</span>
+                    </a>
+                    <a href="#contact" class="bg-brand-accent hover:bg-orange-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-md shadow-orange-500/10">
+                        Get Quote
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <div>
-            📞
-            <a href="tel:+919809737666">+91 9809737666</a>
-            &nbsp; | &nbsp;
-            ✉️
-            <a href="mailto:ftlcargocarriers@gmail.com">
-                ftlcargocarriers@gmail.com
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<!-- NAVIGATION -->
-
-<nav>
-
-<div class="nav-inner">
-
-    <div class="logo">
-        🚛 FTL <span>CARGO CARRIERS</span>
-    </div>
-
-    <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#services">Services</a></li>
-
-        <li><a href="#vehicles">Fleet</a></li>
-
-        <li><a href="#reviews">Reviews</a></li>
-
-        <li><a href="#location">Location</a></li>
-
-        <li>
-            <a href="#quote" class="nav-quote">
-                Get a Quote
-            </a>
-        </li>
-
-    </ul>
-
-</div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-    <div class="hero-tag">
-        <span></span>
-        PROFESSIONAL ROAD TRANSPORTATION
-    </div>
-
-    <h1>
-        Moving Your Cargo<br>
-        <span>Across India.</span>
-    </h1>
-
-    <p class="hero-subtitle">
-        FTL Cargo Carriers provides dependable road
-        transportation solutions from South India to
-        destinations across India, backed by 15+ years
-        of experience and 1,000+ completed deliveries.
-    </p>
-
-    <div class="hero-buttons">
-
-        <a href="#quote" class="btn btn-orange">
-            📋 Request a Free Quote
-        </a>
-
-        <a href="tel:+919809737666" class="btn btn-outline">
-            📞 Call Us Now
-        </a>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- TRUST STATS -->
-
-<div class="stats-wrap">
-
-<div class="container">
-
-<div class="stats">
-
-    <div class="stat">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Years Experience</div>
-    </div>
-
-    <div class="stat">
-        <div class="stat-number">1,000+</div>
-        <div class="stat-label">Deliveries Completed</div>
-    </div>
-
-    <div class="stat">
-        <div class="stat-number">PAN INDIA</div>
-        <div class="stat-label">Transport Coverage</div>
-    </div>
-
-    <div class="stat">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Enquiry Support</div>
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">ABOUT FTL CARGO CARRIERS</div>
-
-    <h2>
-        Experience that keeps your cargo moving.
-    </h2>
-
-    <p>
-        A transport partner built around dependable
-        service, suitable vehicles and long-distance
-        road transportation.
-    </p>
-
-</div>
-
-
-<div class="about-grid">
-
-    <div class="about-image"></div>
-
-    <div class="about-content">
-
-        <h3>
-            Built on 15+ years of experience
-        </h3>
-
-        <p>
-            <strong>FTL Cargo Carriers</strong> provides
-            professional transportation solutions from
-            South Indian locations to destinations
-            throughout India.
-        </p>
-
-        <p>
-            With more than <strong>1,000 deliveries completed</strong>,
-            we understand the importance of dependable
-            vehicle availability, clear communication and
-            practical transport solutions.
-        </p>
-
-        <ul class="check-list">
-
-            <li>All India road transportation</li>
-
-            <li>Multiple vehicle capacities</li>
-
-            <li>Regular long-distance routes</li>
-
-            <li>Different types of goods and loads</li>
-
-            <li>Direct phone and WhatsApp support</li>
-
-        </ul>
-
-        <a href="#quote" class="btn btn-orange">
-            Discuss Your Requirement →
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="services" id="services">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">OUR SERVICES</div>
-
-    <h2>
-        Transport solutions built around your load.
-    </h2>
-
-    <p>
-        From smaller pickup requirements to large
-        full-truck movements, choose a vehicle suited
-        to your transportation requirement.
-    </p>
-
-</div>
-
-
-<div class="service-grid">
-
-    <div class="service-card">
-
-        <div class="service-icon">🚛</div>
-
-        <h3>Full Truck Load</h3>
-
-        <p>
-            Dedicated road transportation for
-            larger cargo requirements.
-        </p>
-
-    </div>
-
-
-    <div class="service-card">
-
-        <div class="service-icon">📦</div>
-
-        <h3>Goods Transportation</h3>
-
-        <p>
-            Transport solutions for different
-            types of commercial goods and loads.
-        </p>
-
-    </div>
-
-
-    <div class="service-card">
-
-        <div class="service-icon">🛣️</div>
-
-        <h3>Long Distance Transport</h3>
-
-        <p>
-            Reliable road transportation between
-            South India and destinations across India.
-        </p>
-
-    </div>
-
-
-    <div class="service-card">
-
-        <div class="service-icon">⚡</div>
-
-        <h3>Vehicle Availability</h3>
-
-        <p>
-            Multiple vehicle options according
-            to cargo size and requirement.
-        </p>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROUTES -->
-
-<section class="routes">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">SERVICE NETWORK</div>
-
-    <h2>
-        Regular routes & Pan-India coverage
-    </h2>
-
-    <p>
-        Regular transportation services connecting
-        Bangalore and South India with major destinations.
-    </p>
-
-</div>
-
-
-<div class="route-grid">
-
-    <div class="route">
-        Bangalore → Maharashtra
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Gujarat
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Haryana
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Uttar Pradesh
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Delhi
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Punjab
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Himachal Pradesh
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Uttarakhand
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        Bangalore → Assam
-        <small>REGULAR SERVICE</small>
-    </div>
-
-    <div class="route">
-        South India → All India
-        <small>PAN INDIA</small>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- VEHICLES -->
-
-<section class="vehicle-section" id="vehicles">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">OUR FLEET</div>
-
-    <h2>
-        Vehicles for different cargo requirements.
-    </h2>
-
-    <p>
-        Select the vehicle category that best matches
-        your load requirement, or contact us for guidance.
-    </p>
-
-</div>
-
-
-<div class="vehicle-grid">
-
-    <div class="vehicle-card">
-        <h3>Bolero Pickup</h3>
-        <p>Pickup & smaller cargo requirements</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>14 FT</h3>
-        <p>Medium cargo transportation</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>17 FT</h3>
-        <p>Medium & long-distance loads</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>19 FT</h3>
-        <p>Larger commercial loads</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>20 FT</h3>
-        <p>Long-distance cargo movement</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>22 FT</h3>
-        <p>Large cargo requirements</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>32 FT SXL</h3>
-        <p>32 Feet Single Axle</p>
-    </div>
-
-    <div class="vehicle-card">
-        <h3>32 FT MXL</h3>
-        <p>32 Feet Multi-Axle</p>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WHY US -->
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">WHY FTL CARGO CARRIERS</div>
-
-    <h2>
-        A transport partner you can depend on.
-    </h2>
-
-</div>
-
-
-<div class="why-grid">
-
-    <div class="why-card">
-
-        <div class="big-icon">🏆</div>
-
-        <h3>15+ Years Experience</h3>
-
-        <p>
-            More than a decade of experience
-            in road transportation and cargo movement.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <div class="big-icon">📊</div>
-
-        <h3>1,000+ Deliveries</h3>
-
-        <p>
-            A proven track record of completed
-            transportation requirements.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <div class="big-icon">🇮🇳</div>
-
-        <h3>Pan-India Reach</h3>
-
-        <p>
-            Regular routes plus transportation
-            requirements across India.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <div class="big-icon">🚚</div>
-
-        <h3>Multiple Vehicle Options</h3>
-
-        <p>
-            Choose from pickup vehicles through
-            large commercial truck options.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <div class="big-icon">📞</div>
-
-        <h3>Direct Communication</h3>
-
-        <p>
-            Speak directly with the transport team
-            about your requirement.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <div class="big-icon">⚡</div>
-
-        <h3>Quick Enquiry</h3>
-
-        <p>
-            Send your pickup, destination and
-            vehicle requirement through our form.
-        </p>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- REVIEWS -->
-
-<section class="reviews" id="reviews">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">CUSTOMER REVIEWS</div>
-
-    <h2>
-        Trusted by our customers.
-    </h2>
-
-    <p>
-        Feedback from customers who have used
-        FTL Cargo Carriers.
-    </p>
-
-</div>
-
-
-<div class="review-grid">
-
-    <div class="review">
-
-        <div class="stars">★★★★★</div>
-
-        <p>
-            Reliable transport service and good
-            communication. A convenient option
-            for regular loads.
-        </p>
-
-        <div class="reviewer">
-            Venkataramanan
-            <span>Google Customer Review</span>
-        </div>
-
-    </div>
-
-
-    <div class="review">
-
-        <div class="stars">★★★★★</div>
-
-        <p>
-            Good vehicle availability and helpful
-            service for long-distance transportation.
-        </p>
-
-        <div class="reviewer">
-            Armaan Khan
-            <span>Google Customer Review</span>
-        </div>
-
-    </div>
-
-
-    <div class="review">
-
-        <div class="stars">★★★★★</div>
-
-        <p>
-            Professional transport service from
-            Bangalore to other states.
-        </p>
-
-        <div class="reviewer">
-            Priya Reddy
-            <span>Google Customer Review</span>
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- LOCATION -->
-
-<section class="location" id="location">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="eyebrow">FIND US</div>
-
-    <h2>
-        Visit FTL Cargo Carriers.
-    </h2>
-
-    <p>
-        Our office is located near the Attibele Toll Gate.
-    </p>
-
-</div>
-
-
-<div class="location-grid">
-
-    <div class="address-card">
-
-        <h3>FTL Cargo Carriers</h3>
-
-        <p>
-            📍<br>
-            <strong>
-                764/14 764/15, Shop No. 7,<br>
-                First Floor, Near Toll Gate,<br>
-                Attibele, Bangalore - 562107,<br>
-                Karnataka, India
-            </strong>
-        </p>
-
-        <p>
-            📧
-            <a href="mailto:ftlcargocarriers@gmail.com"
-               style="color:#fff;">
-                ftlcargocarriers@gmail.com
-            </a>
-        </p>
-
-        <a
-            href="https://www.google.com/maps/search/?api=1&query=FTL%20Cargo%20Carriers%2C%20764%2F14%20764%2F15%20Shop%20No%207%2C%20First%20Floor%2C%20Near%20Toll%20Gate%2C%20Attibele%2C%20Bangalore%20562107%2C%20Karnataka"
-            target="_blank"
-            class="btn btn-orange">
-
-            🗺️ Open Google Maps
-
-        </a>
-
-    </div>
-
-
-    <div class="map">
-
-        <iframe
-            src="https://www.google.com/maps?q=FTL%20Cargo%20Carriers%2C%20764%2F14%20764%2F15%20Shop%20No%207%2C%20First%20Floor%2C%20Near%20Toll%20Gate%2C%20Attibele%2C%20Bangalore%20562107%2C%20Karnataka&output=embed"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- QUOTE / CONTACT -->
-
-<section class="quote-section" id="quote">
-
-<div class="container">
-
-<div class="quote-grid">
-
-    <div class="quote-info">
-
-        <div class="eyebrow">
-            GET A TRANSPORT QUOTE
-        </div>
-
-        <h2>
-            Tell us what you need to <span>move.</span>
-        </h2>
-
-        <p>
-            Share your pickup location, destination,
-            vehicle requirement and cargo details.
-            Our team can contact you regarding your
-            transport requirement.
-        </p>
-
-        <ul class="contact-lines">
-
-            <li>
-                📞
-                <a href="tel:+919809737666">
-                    +91 9809737666
-                </a>
-            </li>
-
-            <li>
-                📞
-                <a href="tel:+917200386871">
-                    +91 7200386871
-                </a>
-            </li>
-
-            <li>
-                ✉️
-                <a href="mailto:ftlcargocarriers@gmail.com">
-                    ftlcargocarriers@gmail.com
-                </a>
-            </li>
-
-        </ul>
-
-        <div style="margin-top:25px;">
-
-            <a
-                href="https://wa.me/919809737666"
-                target="_blank"
-                class="btn btn-green">
-
-                💬 WhatsApp Us
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- FORMSPREE -->
-
-    <form
-        action="https://formspree.io/f/xzepqprn"
-        method="POST"
-        class="quote-form">
-
-        <div class="form-row">
-
-            <div class="form-group">
-
-                <label for="name">
-                    Your Name *
-                </label>
-
-                <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Enter your name"
-                    required>
+    </header>
+
+    <section id="home" class="relative hero-bg text-white min-h-[90vh] flex items-center overflow-hidden py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-brand-accent/20 border border-brand-accent/40 text-brand-accentLight px-4 py-1.5 rounded-full text-sm font-bold tracking-wide">
+                        <span>🇮🇳 15+ Years of Logistics Excellence</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight">
+                        FTL CARGO CARRIERS <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 text-3xl sm:text-5xl font-extrabold block mt-2">
+                            All India Logistics & Transport
+                        </span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+                        Reliable transportation solutions from South India to destinations across the country. Over 1,000+ heavy loads and commercial deliveries successfully completed.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-brand-accent hover:bg-orange-600 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-orange-500/20 transition duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <span>Get Free Transport Quote</span>
+                        </a>
+                        <a href="#vehicles" class="bg-slate-800/80 hover:bg-slate-700/80 text-white font-bold px-7 py-4 rounded-xl border border-slate-700 transition duration-300 transform hover:-translate-y-0.5 flex items-center space-x-2">
+                            <i class="fa-solid fa-truck"></i>
+                            <span>Explore Our Vehicles</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-8 rounded-3xl shadow-2xl space-y-6">
+                        <h3 class="text-xl font-bold border-b border-slate-800 pb-3 text-brand-accentLight flex items-center gap-2">
+                            <i class="fa-solid fa-chart-bar"></i> Operational Capability
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/40">
+                                <div class="text-3xl font-black text-white">15+</div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mt-1 tracking-wider">Years Experience</div>
+                            </div>
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/40">
+                                <div class="text-3xl font-black text-white">1000+</div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mt-1 tracking-wider">Deliveries Done</div>
+                            </div>
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/40">
+                                <div class="text-3xl font-black text-white">28</div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mt-1 tracking-wider">States Covered</div>
+                            </div>
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/40">
+                                <div class="text-3xl font-black text-white">24/7</div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mt-1 tracking-wider">Active Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-
-            <div class="form-group">
-
-                <label for="phone">
-                    Phone Number *
-                </label>
-
-                <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="Enter mobile number"
-                    required>
-
-            </div>
-
         </div>
 
-
-        <div class="form-row">
-
-            <div class="form-group">
-
-                <label for="email">
-                    Email
-                </label>
-
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Your email address">
-
+        <div class="absolute bottom-0 left-0 right-0 h-10 bg-slate-950/40 border-t border-slate-800/60 overflow-hidden flex items-center">
+            <div class="animate-truck-drive whitespace-nowrap text-brand-accent">
+                <i class="fa-solid fa-truck-moving text-xl"></i>
             </div>
-
-
-            <div class="form-group">
-
-                <label for="vehicle">
-                    Vehicle Required
-                </label>
-
-                <select id="vehicle" name="vehicle">
-
-                    <option>Not Sure</option>
-                    <option>Bolero Pickup</option>
-                    <option>14 FT</option>
-                    <option>17 FT</option>
-                    <option>19 FT</option>
-                    <option>20 FT</option>
-                    <option>22 FT</option>
-                    <option>32 FT SXL</option>
-                    <option>32 FT MXL</option>
-
-                </select>
-
-            </div>
-
         </div>
+    </section>
 
+    <section id="about" class="py-20 sm:py-24 bg-white text-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Established Infrastructure</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">About FTL Cargo Carriers</h2>
+                    </div>
+                    <div class="text-slate-600 space-y-4 text-base sm:text-lg leading-relaxed">
+                        <p>
+                            <strong class="text-slate-900 font-bold">FTL Cargo Carriers</strong> is an experienced logistics and transportation firm with over <strong class="text-brand-accent font-bold">15 years of industry experience</strong> across operational lanes.
+                        </p>
+                        <p>
+                            We have safely managed and successfully dispatched over <strong>1000+ heavy commercial shipments</strong>, generating a trusted identity among commercial entities, retail traders, and industrial operations nationwide.
+                        </p>
+                        <p>
+                            From flexible local delivery options to multi-axle large volume container solutions, we seamlessly map the right vehicle configuration onto your corporate metrics.
+                        </p>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 bg-brand-light border-l-4 border-brand-accent rounded-r-xl">
+                            <span class="block text-2xl font-black text-slate-900">15+ Years</span>
+                            <span class="text-sm text-slate-600 font-medium">Industry Commercial Track</span>
+                        </div>
+                        <div class="p-5 bg-brand-light border-l-4 border-brand-accent rounded-r-xl">
+                            <span class="block text-2xl font-black text-slate-900">1000+ Shipments</span>
+                            <span class="text-sm text-slate-600 font-medium">Delivered Intact & On-Time</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="form-row">
-
-            <div class="form-group">
-
-                <label for="pickup">
-                    Pickup Location *
-                </label>
-
-                <input
-                    id="pickup"
-                    name="pickup"
-                    type="text"
-                    placeholder="e.g. Bangalore"
-                    required>
+                <div class="lg:col-span-5">
+                    <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=85" alt="Logistics Warehouse Operations" class="w-full h-full object-cover">
+                    </div>
+                </div>
 
             </div>
+        </div>
+    </section>
 
-
-            <div class="form-group">
-
-                <label for="destination">
-                    Destination *
-                </label>
-
-                <input
-                    id="destination"
-                    name="destination"
-                    type="text"
-                    placeholder="e.g. Mumbai"
-                    required>
-
+    <section id="services" class="py-20 sm:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Safe, Specialized Freight</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Our Logistics Services</h2>
+                <p class="text-slate-500 text-sm sm:text-base">Professional freight and structural transport workflows customized for varying market verticals.</p>
             </div>
 
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-accent hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🚛</div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Full Truck Load (FTL)</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Dedicated logistics mapping using exclusive vehicular deployment for reliable individual cargo integrity.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-accent hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">📦</div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Goods Transportation</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Industrial material handling, raw commodities management, and commercial product logistics frameworks.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-accent hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">🇮🇳</div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Pan India Transport</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Structured transport setups connecting manufacturing sectors in South India to all across the nation.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-brand-accent hover:-translate-y-2 transition duration-300">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Fleet Availability</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Adaptive capacity orchestration helping ensure instant vehicle availability based on payload, weight metrics, and route constraints.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Active Nationwide Lanes</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Regular Transport Routes</h2>
+                <p class="text-slate-500 text-sm sm:text-base">Connecting South India hubs to primary national trade blocks efficiently.</p>
+            </div>
 
-        <div class="form-group">
-
-            <label for="details">
-                Cargo / Load Details
-            </label>
-
-            <textarea
-                id="details"
-                name="details"
-                placeholder="Tell us about the goods, approximate weight, preferred vehicle, etc."></textarea>
-
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Maharashtra</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Gujarat</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Haryana</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Uttar Pradesh</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Delhi</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Punjab</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Himachal Pradesh</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Uttarakhand</span>
+                </div>
+                <div class="bg-brand-light hover:bg-orange-100/60 p-4 border-l-4 border-brand-accent rounded-r-xl font-bold text-slate-800 transition transform hover:translate-x-2 flex items-center space-x-2">
+                    <span>🚛 Bangalore</span> <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i> <span>Assam</span>
+                </div>
+                <div class="sm:col-span-2 lg:col-span-3 bg-brand-navy p-4 rounded-xl font-bold text-brand-accentLight text-center uppercase tracking-wide shadow-md flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-globe"></i> <span>South India To All India Route Deployment</span>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <section id="vehicles" class="py-24 container-pattern text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Container/Truck Setup</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold">Available Fleet Vehicle Configurations</h3>
+                <p class="text-slate-400 text-sm sm:text-base">Multiple sizing capabilities tailored specifically for precise weight dynamics and distance variables.</p>
+            </div>
 
-        <input
-            type="hidden"
-            name="_subject"
-            value="New Transport Quote Request - FTL Cargo Carriers">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck-pickup text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">Bolero Pickup</strong>
+                    <span class="text-slate-400 text-xs font-medium">Sized for short-haul & flexible small loads</span>
+                </div>
 
-        <button
-            type="submit"
-            class="btn btn-orange full">
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">14 FT Truck</strong>
+                    <span class="text-slate-400 text-xs font-medium">Optimized for compact commercial payloads</span>
+                </div>
 
-            🚛 Send Quote Request
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">17 FT Truck</strong>
+                    <span class="text-slate-400 text-xs font-medium">Engineered for medium warehouse delivery needs</span>
+                </div>
 
-        </button>
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck-ramp-box text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">19 FT Truck</strong>
+                    <span class="text-slate-400 text-xs font-medium">Designed for structural long-distance shipments</span>
+                </div>
 
-    </form>
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck-front text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">20 FT Truck</strong>
+                    <span class="text-slate-400 text-xs font-medium">High volume industrial storage profile</span>
+                </div>
 
-</div>
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck-front text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">22 FT Truck</strong>
+                    <span class="text-slate-400 text-xs font-medium">Heavy manufacturing and bulk freight capacity</span>
+                </div>
 
-</div>
+                <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/60 hover:border-brand-accent transition duration-300 group text-center sm:col-span-2 lg:col-span-2">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-trailer text-xl"></i>
+                    </div>
+                    <strong class="block font-bold text-lg text-white mb-1">32 FT MXL Container</strong>
+                    <span class="text-slate-400 text-xs font-medium">Multi-Axle maximum dimension long haul operations</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <section id="reviews" class="py-24 bg-white text-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Endorsements</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">⭐ Customer Reviews</h2>
+                <p class="text-slate-500 text-sm sm:text-base">True experiences shared by our valued business accounts.</p>
+            </div>
 
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-brand-light p-6 rounded-2xl border border-orange-100/70 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm tracking-widest">★★★★★</div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">"Reliable transport service and good communication. A highly dependable option for our regular industrial shipping requirements."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-200/40 font-bold text-slate-900 text-sm">— Venkataramanan</div>
+                </div>
+                <div class="bg-brand-light p-6 rounded-2xl border border-orange-100/70 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm tracking-widest">★★★★★</div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">"Exceptional vehicle availability and structured coordination for long-distance transport. Drivers maintain extreme professionalism throughout the route."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-200/40 font-bold text-slate-900 text-sm">— Armaan Khan</div>
+                </div>
+                <div class="bg-brand-light p-6 rounded-2xl border border-orange-100/70 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-3">
+                        <div class="flex text-amber-500 text-sm tracking-widest">★★★★★</div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">"Efficient logistics execution and an uncompromised customer experience. Truly the finest choice for safe Full Truck Load management."</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-orange-200/40 font-bold text-slate-900 text-sm">— Priya Reddy</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
+    <section id="location" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-xs block">Operational Base</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">📍 Find Our Office Hub</h2>
+            </div>
 
-<footer>
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-brand-accent flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-black text-slate-900">FTL Cargo Carriers</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            <span class="font-bold text-slate-800 block mb-1">📍 Registered Hub Address:</span>
+                            764/14, 764/15, Shop No. 7,<br>
+                            First Floor, Near Toll Gate,<br>
+                            Attibele, Bangalore - 562107,<br>
+                            Karnataka, India.
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=FTL%20Cargo%20Carriers%20764%2F14%20764%2F15%20Shop%20No%207%20First%20Floor%20Near%20Toll%20Gate%20Attibele%20Bangalore%20562107" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-accent hover:bg-orange-600 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-md shadow-orange-500/10 text-sm">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Open Google Maps Navigation</span>
+                    </a>
+                </div>
 
-<div class="container">
+                <div class="h-80 sm:h-auto min-h-[350px] bg-slate-200 rounded-2xl overflow-hidden shadow-md border border-slate-200">
+                    <iframe src="https://www.google.com/maps?q=FTL%20Cargo%20Carriers%20764%2F14%20764%2F15%20Shop%20No%207%20First%20Floor%20Near%20Toll%20Gate%20Attibele%20Bangalore%20562107&output=embed" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="footer-grid">
+    <section id="contact" class="py-20 sm:py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-orange-100 space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-black text-slate-900">Get Your Transport Quote</h2>
+                    <p class="text-slate-500 text-sm">Fill out the logistics details below, and our dispatchers will reach back to you directly.</p>
+                </div>
 
-    <div class="footer-brand">
+                <form action="https://formspree.io/f/xzepqprn" method="POST" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1.5">
+                            <label for="name" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter full name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="phone" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Enter mobile number" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                        </div>
+                    </div>
 
-        <h3>
-            🚛 FTL <span>CARGO CARRIERS</span>
-        </h3>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="email" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email" placeholder="name@company.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                    </div>
 
-        <p>
-            Professional all India road transportation
-            services from South India, backed by 15+
-            years of experience and 1,000+ completed
-            deliveries.
-        </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1.5">
+                            <label for="pickup" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Pickup Origin</label>
+                            <input type="text" id="pickup" name="pickup" required placeholder="e.g. Bangalore Hub" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="destination" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Destination Dropoff</label>
+                            <input type="text" id="destination" name="destination" required placeholder="e.g. Mumbai / Delhi" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                        </div>
+                    </div>
 
-    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="vehicle" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Select Vehicle Profile</label>
+                        <select id="vehicle" name="vehicle" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition">
+                            <option value="Not Sure">Not Sure / Consultation Required</option>
+                            <option value="Bolero Pickup">Bolero Pickup</option>
+                            <option value="14 FT">14 FT Truck</option>
+                            <option value="17 FT">17 FT Truck</option>
+                            <option value="19 FT">19 FT Truck</option>
+                            <option value="20 FT">20 FT Truck</option>
+                            <option value="22 FT">22 FT Truck</option>
+                            <option value="32 FT MXL">32 FT MXL Container</option>
+                        </select>
+                    </div>
 
+                    <div class="flex flex-col gap-1.5">
+                        <label for="message" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Goods / Load Metrics</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Approximate load mass, material details, specific dispatch dates..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-white transition resize-none"></textarea>
+                    </div>
 
-    <div class="footer-col">
+                    <button type="submit" class="w-full bg-brand-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300 tracking-wide text-sm">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Send Transport Requirement
+                    </button>
+                </form>
 
-        <h4>Quick Links</h4>
+                <div class="border-t border-slate-100 pt-8 text-center space-y-4">
+                    <h4 class="text-base font-bold text-slate-900 tracking-wide uppercase">Direct Dispatch Desk</h4>
+                    
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <div class="bg-slate-50 px-4 py-2 rounded-xl font-bold text-sm text-slate-800 border border-slate-200 flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-brand-accent"></i> <span>+91 98097 37666</span>
+                        </div>
+                        <div class="bg-slate-50 px-4 py-2 rounded-xl font-bold text-sm text-slate-800 border border-slate-200 flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-brand-accent"></i> <span>+91 72003 86871</span>
+                        </div>
+                    </div>
 
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#vehicles">Fleet</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#location">Location</a>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <a href="tel:+919809737666" class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">
+                            Call Desk 1
+                        </a>
+                        <a href="tel:+917200386871" class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">
+                            Call Desk 2
+                        </a>
+                        <a href="https://wa.me/919809737666?text=Hi%20FTL%20Cargo%20Carriers,%20I%20need%20a%20logistics%20quote" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition flex items-center space-x-1">
+                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp 1</span>
+                        </a>
+                        <a href="https://wa.me/917200386871?text=Hi%20FTL%20Cargo%20Carriers,%20I%20need%20a%20logistics%20quote" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition flex items-center space-x-1">
+                            <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp 2</span>
+                        </a>
+                    </div>
 
-    </div>
+                    <p class="text-xs text-slate-500 font-medium">
+                        Email: <a href="mailto:ftlcargocarriers@gmail.com" class="text-brand-accent hover:underline font-bold ml-1">ftlcargocarriers@gmail.com</a>
+                    </p>
+                </div>
 
+            </div>
+        </div>
+    </section>
 
-    <div class="footer-col">
+    <footer class="bg-slate-950 text-slate-400 py-12 text-xs border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <h3 class="text-brand-accent font-extrabold text-lg tracking-wider">🚛 FTL CARGO CARRIERS</h3>
+            <p class="max-w-xl mx-auto text-slate-400 font-medium">
+                Pan-India Logistics infrastructure specialized in heavy FTL commercial deployments. Serving markets with reliable transport integrity since 15+ years.
+            </p>
+            <div class="text-slate-500 space-y-1">
+                <p>Office: 764/14, 764/15, Shop No. 7, First Floor, Near Toll Gate, Attibele, Bangalore - 562107</p>
+                <p>Communications Protocol: <span class="text-brand-accentLight">ftlcargocarriers@gmail.com</span></p>
+            </div>
+            <p class="pt-4 border-t border-slate-900 text-slate-600 font-semibold">
+                &copy; 2026 FTL Cargo Carriers &mdash; All India Logistics Operations. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
 
-        <h4>Contact</h4>
-
-        <p>
-            📞 +91 9809737666
-        </p>
-
-        <p>
-            📞 +91 7200386871
-        </p>
-
-        <p>
-            ✉️ ftlcargocarriers@gmail.com
-        </p>
-
-        <p>
-            📍 Attibele, Karnataka - 562107
-        </p>
-
-    </div>
-
-</div>
-
-
-<div class="copyright">
-
-    © 2026 FTL Cargo Carriers.
-    All Rights Reserved.
-
-</div>
-
-</div>
-
-</footer>
-
-
-<!-- CLASSIC WHATSAPP BUTTON -->
-
-<a
-    class="whatsapp"
-    href="https://wa.me/919809737666"
-    target="_blank"
-    aria-label="Chat with FTL Cargo Carriers on WhatsApp"
-    title="WhatsApp FTL Cargo Carriers">
-
-    <svg viewBox="0 0 32 32">
-
-        <path d="M19.11 17.33c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.91 2.92 4.63 4.09.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 5.33a10.67 10.67 0 0 0-9.12 16.2L5.33 26.67l5.28-1.55a10.67 10.67 0 1 0 5.41-19.79zm0 19.4c-1.73 0-3.42-.46-4.9-1.34l-.35-.21-3.13.92.94-3.05-.23-.37a8.74 8.74 0 1 1 7.67 4.05z"/>
-
-    </svg>
-
-</a>
+    <a href="https://wa.me/919809737666?text=Hi%20FTL%20Cargo%20Carriers,%20I%20need%20a%20logistics%20quote" 
+       target="_blank" 
+       title="Chat with FTL Cargo Carriers on WhatsApp"
+       aria-label="WhatsApp"
+       class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-50 transition-transform duration-300 transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
 
 </body>
 </html>
