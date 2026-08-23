@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FTL Cargo Carriers | All India Transport Services</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --saffron: #f28c00;
+    --dark: #151515;
+    --cream: #fff8ed;
+    --white: #ffffff;
+    --gray: #666666;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #151515;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--saffron);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--saffron);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 7%;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    color: var(--saffron);
+    font-size: clamp(38px, 7vw, 75px);
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    margin: 18px 5px 0;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--saffron);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #d97600;
+    transform: translateY(-3px);
+}
+
+.btn-dark {
+    background: #151515;
+    color: white;
+}
+
+.btn-dark:hover {
+    background: #333;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--saffron);
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--gray);
+}
+
+/* ABOUT */
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* SERVICES */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--saffron);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* VEHICLES */
+
+.vehicles {
+    background: white;
+}
+
+.vehicle-list {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.vehicle {
+    background: var(--cream);
+    padding: 22px;
+    border-left: 5px solid var(--saffron);
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* WHY US */
+
+.why-us {
+    background: #151515;
+    color: white;
+}
+
+.why-us .section-title p {
+    color: #cccccc;
+}
+
+.why-us .card {
+    color: #151515;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--cream);
+}
+
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-box h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111111;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+footer span {
+    color: var(--saffron);
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 29px;
+    text-decoration: none;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.3);
+
+    z-index: 9999;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        🚛 FTL CARGO CARRIERS
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#vehicles">Vehicles</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            FTL CARGO CARRIERS
+        </h1>
+
+        <h2>
+            ALL INDIA TRANSPORT SERVICES
+        </h2>
+
+        <p>
+            🚛 Reliable Transport Solutions from all South Indian
+            Locations to anywhere Across India.
+        </p>
+
+        <p>
+            All types of goods and loads are accepted.
+        </p>
+
+        <a
+            href="#contact"
+            class="btn btn-primary">
+
+            Get Transport Quote
+
+        </a>
+
+        <a
+            href="#vehicles"
+            class="btn btn-dark">
+
+            View Vehicles
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About Us
+        </h2>
+
+        <p>
+            Your trusted transport partner
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <p>
+
+            <strong>
+                FTL Cargo Carriers
+            </strong>
+
+            provides reliable transport solutions
+            from all South Indian locations to
+            destinations across India.
+
+        </p>
+
+        <p>
+
+            We accept all types of goods and loads
+            and provide suitable vehicles according
+            to your transportation requirements.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>
+            Our Services
+        </h2>
+
+        <p>
+            Reliable transportation solutions
+            for your business
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🚛
+            </div>
+
+            <h3>
+                Full Truck Load
+            </h3>
+
+            <p>
+                Reliable FTL transportation solutions
+                for your cargo requirements.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📦
+            </div>
+
+            <h3>
+                Goods Transportation
+            </h3>
+
+            <p>
+                We transport different types of
+                goods and loads across India.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇮🇳
+            </div>
+
+            <h3>
+                All India Service
+            </h3>
+
+            <p>
+                Transport solutions from South Indian
+                locations to anywhere across India.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>
+                Reliable Service
+            </h3>
+
+            <p>
+                Dependable vehicle availability for
+                your transportation needs.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- VEHICLES -->
+
+<section
+    class="vehicles"
+    id="vehicles">
+
+    <div class="section-title">
+
+        <h2>
+            🚛 Vehicles Available
+        </h2>
+
+        <p>
+            Vehicles available for different
+            cargo requirements
+        </p>
+
+    </div>
+
+
+    <div class="vehicle-list">
+
+        <div class="vehicle">
+            🚛 Bolero Pickup
+        </div>
+
+        <div class="vehicle">
+            🚛 14 Feet
+        </div>
+
+        <div class="vehicle">
+            🚛 20 Feet
+        </div>
+
+        <div class="vehicle">
+            🚛 22 Feet
+        </div>
+
+        <div class="vehicle">
+            🚛 32 Feet Single Axle (SXL)
+        </div>
+
+        <div class="vehicle">
+            🚛 32 Feet Multi-Axle (MXL)
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <div class="section-title">
+
+        <h2>
+            Why Choose FTL Cargo Carriers?
+        </h2>
+
+        <p>
+            Transportation you can depend on
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇮🇳
+            </div>
+
+            <h3>
+                Pan India Reach
+            </h3>
+
+            <p>
+                Transport from South Indian locations
+                to destinations across India.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🚚
+            </div>
+
+            <h3>
+                Multiple Vehicles
+            </h3>
+
+            <p>
+                Different vehicle sizes available
+                for different cargo requirements.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📦
+            </div>
+
+            <h3>
+                All Types of Loads
+            </h3>
+
+            <p>
+                We accept different types of goods
+                and transportation loads.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section
+    class="contact"
+    id="contact">
+
+    <div class="section-title">
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Get in touch for your transport requirements
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h3>
+            FTL Cargo Carriers
+        </h3>
+
+        <p>
+            🚛
+            <strong>
+                All India Transport Services
+            </strong>
+        </p>
+
+        <p>
+            📍 South India → Anywhere Across India
+        </p>
+
+        <p>
+            📞
+            <strong>
+                +91 9809737666
+            </strong>
+        </p>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/919809737666"
+            class="btn btn-primary"
+            target="_blank">
+
+            💬 WhatsApp Us
+
+        </a>
+
+
+        <!-- PHONE -->
+
+        <a
+            href="tel:+919809737666"
+            class="btn btn-dark">
+
+            📞 Call Us
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+
+        © 2026
+
+        <span>
+            FTL Cargo Carriers
+        </span>
+
+        — All Rights Reserved.
+
+    </p>
+
+    <p>
+        All India Transport Services
+    </p>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919809737666"
+    target="_blank"
+    title="Chat on WhatsApp">
+
+    💬
+
+</a>
+
+
+</body>
+</html>
