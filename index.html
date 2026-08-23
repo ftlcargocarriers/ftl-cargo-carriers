@@ -4,20 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FTL Cargo Carriers | All India Transport Services</title>
+<meta name="description" content="FTL Cargo Carriers - All India Transport Services from Bangalore. Regular transport services to Maharashtra, Gujarat, Haryana, UP, Delhi, Punjab, Himachal Pradesh, Uttarakhand, Assam and all over India.">
+
+<title>FTL Cargo Carriers | All India Transport & Logistics</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 scroll-behavior:smooth;
 }
 
 :root{
 --orange:#f28c00;
---dark:#151515;
+--orange-dark:#d87500;
+--dark:#101010;
 --cream:#fff8ed;
 --white:#fff;
 --gray:#666;
@@ -28,24 +32,33 @@ body{
 background:var(--cream);
 color:var(--dark);
 overflow-x:hidden;
+line-height:1.6;
 }
+
+/* NAVBAR */
 
 nav{
 position:sticky;
 top:0;
 z-index:1000;
-background:#151515;
-padding:15px 6%;
+background:rgba(16,16,16,.98);
+padding:14px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 3px 15px rgba(0,0,0,.2);
+box-shadow:0 3px 18px rgba(0,0,0,.25);
 }
 
 .logo{
 color:var(--orange);
 font-size:20px;
-font-weight:bold;
+font-weight:800;
+letter-spacing:.5px;
+white-space:nowrap;
+}
+
+.logo span{
+color:white;
 }
 
 nav ul{
@@ -60,12 +73,15 @@ nav a{
 color:white;
 text-decoration:none;
 font-weight:bold;
+font-size:14px;
 transition:.3s;
 }
 
 nav a:hover{
 color:var(--orange);
 }
+
+/* HERO */
 
 .hero{
 min-height:90vh;
@@ -95,21 +111,21 @@ animation:slider 18s infinite;
 
 .slide:nth-child(1){
 background-image:
-linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
-url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=85");
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85");
 }
 
 .slide:nth-child(2){
 background-image:
-linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
 url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85");
 animation-delay:6s;
 }
 
 .slide:nth-child(3){
 background-image:
-linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
-url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1800&q=85");
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=85");
 animation-delay:12s;
 }
 
@@ -124,8 +140,8 @@ animation-delay:12s;
 .hero-content{
 position:relative;
 z-index:2;
-max-width:950px;
-padding:30px;
+max-width:1000px;
+padding:30px 20px;
 animation:fadeUp 1.2s ease;
 }
 
@@ -140,42 +156,71 @@ transform:translateY(0);
 }
 }
 
+.hero-badge{
+display:inline-block;
+background:rgba(242,140,0,.15);
+border:1px solid var(--orange);
+color:#fff;
+padding:8px 18px;
+border-radius:30px;
+font-size:14px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
 .hero h1{
 color:var(--orange);
-font-size:clamp(40px,7vw,76px);
-margin-bottom:15px;
-text-shadow:2px 2px 8px #000;
+font-size:clamp(42px,7vw,78px);
+line-height:1.05;
+margin-bottom:18px;
+text-shadow:2px 3px 10px #000;
+font-weight:900;
 }
 
 .hero h2{
 font-size:clamp(20px,3vw,34px);
 margin-bottom:20px;
+font-weight:700;
 }
 
 .hero p{
 font-size:18px;
-line-height:1.7;
-margin:8px 0;
+line-height:1.8;
+margin:8px auto;
+max-width:850px;
 }
+
+.hero-buttons{
+margin-top:18px;
+}
+
+/* BUTTONS */
 
 .btn{
 display:inline-block;
 padding:14px 25px;
-margin:18px 5px 0;
+margin:8px 5px 0;
 border-radius:30px;
 text-decoration:none;
 font-weight:bold;
 transition:.3s;
+border:none;
+cursor:pointer;
+font-size:15px;
 }
 
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 8px 20px rgba(0,0,0,.25);
+box-shadow:0 8px 22px rgba(0,0,0,.3);
 }
 
 .btn-primary{
 background:var(--orange);
 color:white;
+}
+
+.btn-primary:hover{
+background:var(--orange-dark);
 }
 
 .btn-dark{
@@ -188,18 +233,21 @@ background:var(--green);
 color:white;
 }
 
+/* SECTIONS */
+
 section{
-padding:75px 7%;
+padding:80px 7%;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:45px;
+margin-bottom:48px;
 }
 
 .section-title h2{
 color:var(--orange);
 font-size:36px;
+line-height:1.2;
 margin-bottom:10px;
 }
 
@@ -207,6 +255,8 @@ margin-bottom:10px;
 color:var(--gray);
 font-size:17px;
 }
+
+/* ABOUT */
 
 .about{
 max-width:950px;
@@ -217,7 +267,116 @@ line-height:1.9;
 }
 
 .about p{
-margin-bottom:15px;
+margin-bottom:16px;
+}
+
+.highlight{
+color:var(--orange);
+font-weight:bold;
+}
+
+/* STATS */
+
+.stats{
+background:#151515;
+padding:35px 7%;
+}
+
+.stats-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+text-align:center;
+}
+
+.stat{
+color:white;
+padding:15px;
+}
+
+.stat strong{
+display:block;
+font-size:30px;
+color:var(--orange);
+margin-bottom:4px;
+}
+
+.stat span{
+font-size:14px;
+color:#ccc;
+}
+
+/* SERVICES */
+
+.services{
+background:white;
+}
+
+.route-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:18px;
+max-width:1100px;
+margin:auto;
+}
+
+.route-card{
+background:var(--cream);
+border-left:5px solid var(--orange);
+padding:22px;
+border-radius:12px;
+font-weight:bold;
+transition:.3s;
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.route-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+/* VEHICLES */
+
+.vehicles{
+background:#fff;
+}
+
+.vehicle-list{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:18px;
+}
+
+.vehicle{
+background:var(--cream);
+padding:28px 15px;
+border-radius:14px;
+border-left:5px solid var(--orange);
+text-align:center;
+font-weight:bold;
+font-size:18px;
+transition:.3s;
+box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.vehicle:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+/* WHY US */
+
+.why-us{
+background:#151515;
+color:white;
+}
+
+.why-us .section-title p{
+color:#ccc;
 }
 
 .cards{
@@ -228,16 +387,17 @@ gap:25px;
 
 .card{
 background:white;
-padding:30px 22px;
+padding:32px 22px;
 border-radius:18px;
 text-align:center;
 box-shadow:0 6px 25px rgba(0,0,0,.08);
 border-top:5px solid var(--orange);
 transition:.35s;
+color:var(--dark);
 }
 
 .card:hover{
-transform:translateY(-9px);
+transform:translateY(-8px);
 box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
@@ -256,70 +416,7 @@ color:var(--gray);
 line-height:1.6;
 }
 
-.services{
-background:white;
-}
-
-.route-card{
-background:var(--cream);
-border-left:5px solid var(--orange);
-padding:22px;
-border-radius:12px;
-font-weight:bold;
-transition:.3s;
-}
-
-.route-card:hover{
-transform:translateX(6px);
-}
-
-.route-list{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px;
-max-width:1050px;
-margin:auto;
-}
-
-.vehicles{
-background:#fff;
-}
-
-.vehicle-list{
-max-width:1050px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:18px;
-}
-
-.vehicle{
-background:var(--cream);
-padding:25px 15px;
-border-radius:12px;
-border-left:5px solid var(--orange);
-text-align:center;
-font-weight:bold;
-font-size:18px;
-transition:.3s;
-}
-
-.vehicle:hover{
-transform:scale(1.03);
-}
-
-.why-us{
-background:#151515;
-color:white;
-}
-
-.why-us .section-title p{
-color:#ccc;
-}
-
-.why-us .card{
-color:#151515;
-}
+/* REVIEWS */
 
 .reviews{
 background:var(--cream);
@@ -343,14 +440,17 @@ margin-bottom:15px;
 color:#555;
 line-height:1.7;
 margin-bottom:15px;
+font-style:italic;
 }
+
+/* LOCATION */
 
 .location{
 background:white;
 }
 
 .location-box{
-max-width:1050px;
+max-width:1100px;
 margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -363,6 +463,7 @@ background:var(--cream);
 padding:35px;
 border-radius:18px;
 border-left:5px solid var(--orange);
+box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
 .address-box h3{
@@ -390,15 +491,17 @@ min-height:350px;
 border:0;
 }
 
+/* CONTACT */
+
 .contact{
 background:var(--cream);
 }
 
 .contact-box{
-max-width:800px;
+max-width:850px;
 margin:auto;
 background:white;
-padding:45px 25px;
+padding:45px 30px;
 text-align:center;
 border-radius:20px;
 box-shadow:0 7px 25px rgba(0,0,0,.1);
@@ -406,12 +509,56 @@ box-shadow:0 7px 25px rgba(0,0,0,.1);
 
 .contact-box h3{
 font-size:30px;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .contact-box p{
 margin:13px 0;
 font-size:18px;
+}
+
+.quote-form{
+max-width:620px;
+margin:30px auto 0;
+text-align:left;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+
+.form-group label{
+font-weight:bold;
+font-size:14px;
+color:var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+padding:13px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+outline:none;
+width:100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+border-color:var(--orange);
+box-shadow:0 0 0 2px rgba(242,140,0,.1);
+}
+
+.form-submit{
+width:100%;
+margin-top:5px;
 }
 
 .number-box{
@@ -429,16 +576,25 @@ border-radius:25px;
 font-weight:bold;
 }
 
+.divider{
+margin:35px 0;
+border:none;
+border-top:1px solid #eee;
+}
+
+/* FOOTER */
+
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:35px 15px;
+padding:40px 15px;
 }
 
 footer h3{
 color:var(--orange);
 margin-bottom:10px;
+font-size:23px;
 }
 
 footer p{
@@ -446,32 +602,52 @@ margin:7px;
 color:#ccc;
 }
 
-.whatsapp{
+.footer-contact{
+margin-top:15px;
+font-weight:bold;
+}
+
+/* FLOATING BUTTONS */
+
+.floating-buttons{
 position:fixed;
 right:20px;
 bottom:20px;
-width:62px;
-height:62px;
-background:var(--green);
-color:white;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:9999;
+}
+
+.float-btn{
+width:58px;
+height:58px;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:29px;
+color:white;
 text-decoration:none;
+font-size:25px;
 box-shadow:0 6px 20px rgba(0,0,0,.3);
-z-index:9999;
-animation:pulse 2s infinite;
+transition:.3s;
 }
 
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}
-70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+.float-btn:hover{
+transform:scale(1.1);
 }
 
-@media(max-width:750px){
+.float-whatsapp{
+background:var(--green);
+}
+
+.float-call{
+background:var(--orange);
+}
+
+/* TABLET */
+
+@media(max-width:850px){
 
 nav{
 flex-direction:column;
@@ -479,28 +655,59 @@ gap:12px;
 }
 
 nav ul{
-gap:10px;
-font-size:14px;
+gap:12px;
+font-size:13px;
 }
 
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.location-box{
+grid-template-columns:1fr;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
 section{
-padding:55px 5%;
+padding:60px 5%;
 }
 
 .hero{
-min-height:85vh;
+min-height:88vh;
 }
 
 .hero h1{
 font-size:42px;
 }
 
-.hero-content{
-padding:20px;
+.hero h2{
+font-size:22px;
 }
 
-.location-box{
-grid-template-columns:1fr;
+.hero p{
+font-size:16px;
+}
+
+.hero-content{
+padding:20px 15px;
+}
+
+.section-title h2{
+font-size:30px;
+}
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stat strong{
+font-size:25px;
 }
 
 .map-box,
@@ -508,16 +715,33 @@ grid-template-columns:1fr;
 min-height:300px;
 }
 
+.contact-box{
+padding:35px 18px;
 }
+
+.floating-buttons{
+right:14px;
+bottom:14px;
+}
+
+.float-btn{
+width:54px;
+height:54px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
 
 <div class="logo">
-🚛 FTL CARGO CARRIERS
+🚛 FTL <span>CARGO CARRIERS</span>
 </div>
 
 <ul>
@@ -532,6 +756,9 @@ min-height:300px;
 
 </nav>
 
+
+<!-- HERO -->
+
 <section class="hero" id="home">
 
 <div class="slides">
@@ -544,40 +771,82 @@ min-height:300px;
 
 <div class="hero-content">
 
+<div class="hero-badge">
+🇮🇳 PAN INDIA TRANSPORT & LOGISTICS
+</div>
+
 <h1>FTL CARGO CARRIERS</h1>
 
-<h2>ALL INDIA TRANSPORT SERVICES</h2>
+<h2>Reliable Transport. Every Route. Every Load.</h2>
 
 <p>
-🚛 Reliable Transport Solutions from Bangalore
-to Maharashtra, Gujarat, Haryana, UP, Delhi,
-Punjab, Himachal Pradesh, Uttarakhand, Assam
-and all over India.
+🚛 Regular transport services from Bangalore
+to Maharashtra, Gujarat, Haryana, Uttar Pradesh,
+Delhi, Punjab, Himachal Pradesh, Uttarakhand,
+Assam and all over India.
 </p>
 
 <p>
-📦 All types of goods and loads accepted.
+📦 Multiple vehicle options for different cargo requirements.
 </p>
+
+<div class="hero-buttons">
 
 <a href="#contact" class="btn btn-primary">
-Get Transport Quote
+📋 Get a Free Quote
 </a>
 
 <a href="#vehicles" class="btn btn-dark">
-View Vehicles
+🚛 View Vehicles
 </a>
+
+</div>
 
 </div>
 
 </section>
 
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<strong>10+</strong>
+<span>Major Routes</span>
+</div>
+
+<div class="stat">
+<strong>7</strong>
+<span>Vehicle Options</span>
+</div>
+
+<div class="stat">
+<strong>Pan India</strong>
+<span>Service Network</span>
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+<span>Enquiry Support</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
 <section id="about">
 
 <div class="section-title">
 
-<h2>About Us</h2>
+<h2>About FTL Cargo Carriers</h2>
 
-<p>Your trusted transport partner</p>
+<p>Your trusted transport partner from Bangalore</p>
 
 </div>
 
@@ -590,8 +859,9 @@ across India.
 </p>
 
 <p>
-We provide regular transport services and suitable
-vehicles for different types of goods and loads.
+We provide <span class="highlight">regular transport services</span>
+and suitable vehicles for different types of goods,
+loads and transportation requirements.
 </p>
 
 <p>
@@ -604,15 +874,18 @@ solutions for businesses and customers.
 
 </section>
 
+
+<!-- SERVICES -->
+
 <section class="services" id="services">
 
 <div class="section-title">
 
-<h2>📋 Regular Services</h2>
+<h2>📋 Regular Transport Services</h2>
 
 <p>
-Regular transport routes from Bangalore
-to major destinations across India
+Regular transport routes from Bangalore to major
+destinations across India
 </p>
 
 </div>
@@ -620,19 +893,31 @@ to major destinations across India
 <div class="route-list">
 
 <div class="route-card">🚛 Bangalore → Maharashtra</div>
+
 <div class="route-card">🚛 Bangalore → Gujarat</div>
+
 <div class="route-card">🚛 Bangalore → Haryana</div>
+
 <div class="route-card">🚛 Bangalore → Uttar Pradesh (UP)</div>
+
 <div class="route-card">🚛 Bangalore → Delhi</div>
+
 <div class="route-card">🚛 Bangalore → Punjab</div>
+
 <div class="route-card">🚛 Bangalore → Himachal Pradesh</div>
+
 <div class="route-card">🚛 Bangalore → Uttarakhand</div>
+
 <div class="route-card">🚛 Bangalore → Assam</div>
+
 <div class="route-card">🇮🇳 Bangalore → All Over India</div>
 
 </div>
 
 </section>
+
+
+<!-- VEHICLES -->
 
 <section class="vehicles" id="vehicles">
 
@@ -641,7 +926,7 @@ to major destinations across India
 <h2>🚛 Vehicles Available</h2>
 
 <p>
-Vehicles available for different cargo requirements
+Vehicle options for different cargo and load requirements
 </p>
 
 </div>
@@ -649,16 +934,25 @@ Vehicles available for different cargo requirements
 <div class="vehicle-list">
 
 <div class="vehicle">🚛 Bolero Pickup</div>
-<div class="vehicle">🚛 14 FT</div>
-<div class="vehicle">🚛 17 FT</div>
-<div class="vehicle">🚛 19 FT</div>
-<div class="vehicle">🚛 20 FT</div>
-<div class="vehicle">🚛 22 FT</div>
+
+<div class="vehicle">🚚 14 FT</div>
+
+<div class="vehicle">🚚 17 FT</div>
+
+<div class="vehicle">🚚 19 FT</div>
+
+<div class="vehicle">🚚 20 FT</div>
+
+<div class="vehicle">🚚 22 FT</div>
+
 <div class="vehicle">🚛 32 FT MXL</div>
 
 </div>
 
 </section>
+
+
+<!-- WHY US -->
 
 <section class="why-us">
 
@@ -706,7 +1000,7 @@ to your cargo requirements.
 
 <p>
 Transport solutions for different types
-of goods and loads.
+of goods and cargo requirements.
 </p>
 
 </div>
@@ -728,6 +1022,9 @@ regular service routes.
 
 </section>
 
+
+<!-- REVIEWS -->
+
 <section class="reviews" id="reviews">
 
 <div class="section-title">
@@ -746,11 +1043,10 @@ regular service routes.
 
 <p>
 “Reliable transport service and good
-communication. A convenient option
-for our regular loads.”
+communication for regular loads.”
 </p>
 
-<strong>— Customer</strong>
+<strong>— Venkataramanan</strong>
 
 </div>
 
@@ -763,7 +1059,7 @@ for our regular loads.”
 service for long-distance transportation.”
 </p>
 
-<strong>— Customer</strong>
+<strong>— Armaan Khan</strong>
 
 </div>
 
@@ -776,13 +1072,16 @@ service for long-distance transportation.”
 Bangalore to other states.”
 </p>
 
-<strong>— Customer</strong>
+<strong>— Priya Reddy</strong>
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- LOCATION -->
 
 <section class="location" id="location">
 
@@ -832,21 +1131,135 @@ loading="lazy">
 
 </section>
 
+
+<!-- CONTACT -->
+
 <section class="contact" id="contact">
 
 <div class="section-title">
 
-<h2>📩 Contact Us</h2>
+<h2>📩 Get a Free Transport Quote</h2>
 
 <p>
-Get in touch for your transport requirements
+Send your requirement or contact us directly
 </p>
 
 </div>
 
 <div class="contact-box">
 
-<h3>FTL Cargo Carriers</h3>
+<h3>Request a Transport Quote</h3>
+
+<p>
+🚛 Tell us your pickup, destination and vehicle requirement.
+</p>
+
+<form
+class="quote-form"
+action="https://formspree.io/f/xbjnqkyz"
+method="POST">
+
+<div class="form-group">
+
+<label for="name">Your Name</label>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="phone">Phone Number</label>
+
+<input
+type="tel"
+id="phone"
+name="phone"
+placeholder="Enter mobile number"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="pickup">Pickup Location</label>
+
+<input
+type="text"
+id="pickup"
+name="pickup"
+placeholder="e.g. Bangalore"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="destination">Destination</label>
+
+<input
+type="text"
+id="destination"
+name="destination"
+placeholder="e.g. Mumbai, Delhi, Gujarat"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="vehicle">Vehicle Required</label>
+
+<select
+id="vehicle"
+name="vehicle">
+
+<option value="Bolero Pickup">Bolero Pickup</option>
+<option value="14 FT">14 FT</option>
+<option value="17 FT">17 FT</option>
+<option value="19 FT">19 FT</option>
+<option value="20 FT">20 FT</option>
+<option value="22 FT">22 FT</option>
+<option value="32 FT MXL">32 FT MXL</option>
+<option value="Other">Other / Not Sure</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="details">
+Goods Details / Approximate Weight
+</label>
+
+<textarea
+id="details"
+name="details"
+rows="4"
+placeholder="Describe goods type and approximate weight">
+</textarea>
+
+</div>
+
+<button
+type="submit"
+class="btn btn-primary form-submit">
+
+📋 Submit Transport Inquiry
+
+</button>
+
+</form>
+
+<hr class="divider">
+
+<h3>Direct Call & WhatsApp</h3>
 
 <p>
 🚛 <strong>All India Transport Services</strong>
@@ -908,11 +1321,16 @@ class="btn btn-green">
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
 
 <h3>🚛 FTL CARGO CARRIERS</h3>
 
-<p>All India Transport Services</p>
+<p>
+All India Transport & Logistics Services
+</p>
 
 <p>
 Bangalore → Maharashtra • Gujarat • Haryana • UP • Delhi
@@ -926,14 +1344,32 @@ Punjab • Himachal Pradesh • Uttarakhand • Assam • All India
 📍 Attibele, Karnataka - 562107
 </p>
 
+<p class="footer-contact">
+📞 9809737666 &nbsp; | &nbsp; 7200386871
+</p>
+
 <p>
 © 2026 FTL Cargo Carriers — All Rights Reserved.
 </p>
 
 </footer>
 
+
+<!-- FLOATING BUTTONS -->
+
+<div class="floating-buttons">
+
 <a
-class="whatsapp"
+class="float-btn float-call"
+href="tel:+919809737666"
+title="Call FTL Cargo Carriers">
+
+📞
+
+</a>
+
+<a
+class="float-btn float-whatsapp"
 href="https://wa.me/919809737666"
 target="_blank"
 title="Chat on WhatsApp">
@@ -941,6 +1377,8 @@ title="Chat on WhatsApp">
 💬
 
 </a>
+
+</div>
 
 </body>
 </html>
