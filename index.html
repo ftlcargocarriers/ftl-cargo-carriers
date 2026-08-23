@@ -1,388 +1,1229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FTL Cargo Carriers | All India Transport Services</title>
+<meta name="description" content="FTL Cargo Carriers - Professional All India Transport Services from Bangalore. Full Truck Load, goods transportation and reliable logistics solutions.">
+
+<meta name="keywords" content="FTL Cargo Carriers, transport Bangalore, logistics Bangalore, truck transport, all India transport, cargo carriers, Attibele transport">
+
+<title>FTL Cargo Carriers | Professional All India Transport Services</title>
+
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
 }
 
-:root {
-    --saffron: #f28c00;
-    --dark: #151515;
-    --cream: #fff8ed;
-    --white: #ffffff;
-    --gray: #666666;
+:root{
+    --orange:#f28c00;
+    --orange-dark:#d96f00;
+    --dark:#101820;
+    --dark-2:#17212b;
+    --cream:#fff8ed;
+    --white:#ffffff;
+    --gray:#68717a;
+    --light:#f5f7f9;
+    --green:#25D366;
+    --border:#e5e7eb;
 }
 
-body {
-    background: var(--cream);
-    color: var(--dark);
+body{
+    background:var(--cream);
+    color:var(--dark);
+    overflow-x:hidden;
 }
 
-/* NAVIGATION */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #151515;
-    padding: 15px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+a{
+    text-decoration:none;
 }
 
-.logo {
-    color: var(--saffron);
-    font-size: 21px;
-    font-weight: bold;
+img{
+    max-width:100%;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+    background:#0b1116;
+    color:#fff;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    font-size:14px;
 }
 
-nav a:hover {
-    color: var(--saffron);
+.topbar-left,
+.topbar-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
 
-/* HERO */
+.topbar a{
+    color:#fff;
+    transition:.3s;
+}
 
-.hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 7%;
+.topbar a:hover{
+    color:var(--orange);
+}
 
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(16,24,32,.97);
+    backdrop-filter:blur(10px);
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    box-shadow:0 4px 20px rgba(0,0,0,.18);
+}
+
+.logo{
+    color:var(--orange);
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:.4px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#fff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:24px;
+    align-items:center;
+}
+
+nav a{
+    color:#fff;
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--orange);
+}
+
+.nav-call{
+    background:var(--orange);
+    color:#fff !important;
+    padding:10px 16px;
+    border-radius:25px;
+}
+
+.nav-call:hover{
+    background:var(--orange-dark);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:88vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+}
+
+.hero-slides{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:heroSlider 18s infinite;
+}
+
+.hero-slide:nth-child(1){
+    background-image:
+    linear-gradient(rgba(5,10,15,.74),rgba(5,10,15,.74)),
+    url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=90");
+}
+
+.hero-slide:nth-child(2){
+    background-image:
+    linear-gradient(rgba(5,10,15,.76),rgba(5,10,15,.76)),
+    url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=90");
+    animation-delay:6s;
+}
+
+.hero-slide:nth-child(3){
+    background-image:
+    linear-gradient(rgba(5,10,15,.72),rgba(5,10,15,.72)),
+    url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2000&q=90");
+    animation-delay:12s;
+}
+
+@keyframes heroSlider{
+
+    0%{
+        opacity:0;
+        transform:scale(1.02);
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    33%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    41%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:92%;
+    max-width:1050px;
+    padding:30px 20px;
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero-badge{
+    display:inline-block;
+    background:rgba(242,140,0,.16);
+    border:1px solid rgba(242,140,0,.6);
+    color:#fff;
+    padding:9px 18px;
+    border-radius:30px;
+    margin-bottom:22px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.hero h1{
+    color:var(--orange);
+    font-size:clamp(40px,7vw,78px);
+    line-height:1.05;
+    margin-bottom:18px;
+    text-shadow:2px 3px 10px rgba(0,0,0,.7);
+    letter-spacing:1px;
+}
+
+.hero h2{
+    font-size:clamp(20px,3vw,34px);
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:850px;
+    margin:8px auto;
+    color:#f2f2f2;
+}
+
+.hero-buttons{
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 24px;
+    margin:7px 4px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.btn-primary{
+    background:var(--orange);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--orange-dark);
+}
+
+.btn-dark{
+    background:#111820;
+    color:#fff;
+}
+
+.btn-dark:hover{
+    background:#26333e;
+}
+
+.btn-green{
+    background:var(--green);
+    color:#fff;
+}
+
+.btn-outline{
+    border:2px solid var(--orange);
+    color:var(--orange);
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:var(--orange);
+    color:#fff;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    background:#fff;
+    position:relative;
+    margin-top:-45px;
+    z-index:10;
+}
+
+.stats-box{
+    max-width:1100px;
+    margin:auto;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 12px 40px rgba(0,0,0,.12);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    overflow:hidden;
+}
+
+.stat{
+    text-align:center;
+    padding:28px 15px;
+    border-right:1px solid var(--border);
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat strong{
+    display:block;
+    font-size:29px;
+    color:var(--orange);
+    margin-bottom:7px;
+}
+
+.stat span{
+    color:var(--gray);
+    font-size:14px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+    padding:80px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:48px;
+}
+
+.section-title .small-title{
+    color:var(--orange);
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:12px;
+    color:var(--dark);
+}
+
+.section-title p{
+    color:var(--gray);
+    font-size:17px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section{
+    background:var(--cream);
+}
+
+.about-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-text{
+    font-size:17px;
+    line-height:1.9;
+    color:#444;
+}
+
+.about-text p{
+    margin-bottom:17px;
+}
+
+.about-text strong{
+    color:var(--dark);
+}
+
+.about-points{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.about-point{
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    border-left:4px solid var(--orange);
+    font-weight:bold;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.about-image{
+    min-height:390px;
+    border-radius:20px;
+    overflow:hidden;
     background:
-        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
-        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1200&q=85");
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+    display:flex;
+    align-items:flex-end;
 }
 
-.hero-content {
-    max-width: 900px;
+.about-image-box{
+    width:100%;
+    background:rgba(10,15,20,.85);
+    color:#fff;
+    padding:22px;
 }
 
-.hero h1 {
-    color: var(--saffron);
-    font-size: clamp(38px, 7vw, 75px);
-    margin-bottom: 12px;
+.about-image-box h3{
+    color:var(--orange);
+    margin-bottom:7px;
 }
 
-.hero h2 {
-    font-size: clamp(20px, 3vw, 32px);
-    margin-bottom: 20px;
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section{
+    background:#fff;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 10px;
+.cards{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
 }
 
-/* BUTTONS */
-
-.btn {
-    display: inline-block;
-    padding: 14px 26px;
-    margin: 18px 5px 0;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
+.card{
+    background:#fff;
+    padding:30px 22px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+    border:1px solid #eee;
+    border-top:5px solid var(--orange);
+    transition:.35s;
 }
 
-.btn-primary {
-    background: var(--saffron);
-    color: white;
+.card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 15px 35px rgba(0,0,0,.13);
 }
 
-.btn-primary:hover {
-    background: #d97600;
-    transform: translateY(-3px);
+.icon{
+    font-size:42px;
+    margin-bottom:16px;
 }
 
-.btn-dark {
-    background: #151515;
-    color: white;
+.card h3{
+    margin-bottom:12px;
+    font-size:20px;
 }
 
-.btn-dark:hover {
-    background: #333;
+.card p{
+    color:var(--gray);
+    line-height:1.7;
+    font-size:15px;
 }
 
-/* SECTIONS */
 
-section {
-    padding: 70px 7%;
+/* =========================================================
+   ROUTES
+========================================================= */
+
+.routes-section{
+    background:var(--light);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
+.route-list{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
 }
 
-.section-title h2 {
-    font-size: 36px;
-    color: var(--saffron);
-    margin-bottom: 8px;
+.route-card{
+    background:#fff;
+    padding:20px 22px;
+    border-radius:12px;
+    border-left:5px solid var(--orange);
+    font-weight:bold;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+    transition:.3s;
 }
 
-.section-title p {
-    color: var(--gray);
+.route-card:hover{
+    transform:translateX(6px);
+    box-shadow:0 9px 25px rgba(0,0,0,.09);
 }
 
-/* ABOUT */
-
-.about {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.8;
+.route-card span{
+    color:var(--orange);
 }
 
-/* SERVICES */
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+/* =========================================================
+   VEHICLES
+========================================================= */
+
+.vehicles-section{
+    background:#fff;
 }
 
-.card {
-    background: white;
-    padding: 30px 22px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-top: 5px solid var(--saffron);
-    transition: 0.3s;
+.vehicle-list{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.vehicle{
+    background:var(--cream);
+    padding:26px 15px;
+    border-radius:14px;
+    border-left:5px solid var(--orange);
+    text-align:center;
+    font-weight:800;
+    font-size:17px;
+    transition:.3s;
+    box-shadow:0 4px 15px rgba(0,0,0,.04);
 }
 
-.icon {
-    font-size: 45px;
-    margin-bottom: 15px;
+.vehicle:hover{
+    transform:translateY(-5px);
+    background:#fff2dc;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.vehicle-icon{
+    font-size:35px;
+    margin-bottom:10px;
 }
 
-.card p {
-    color: var(--gray);
-    line-height: 1.6;
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-section{
+    background:
+    linear-gradient(rgba(10,16,22,.96),rgba(10,16,22,.96)),
+    url("https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe5d?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    color:#fff;
 }
 
-/* VEHICLES */
-
-.vehicles {
-    background: white;
+.why-section .section-title h2{
+    color:#fff;
 }
 
-.vehicle-list {
-    max-width: 950px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
+.why-section .section-title p{
+    color:#bfc6cc;
 }
 
-.vehicle {
-    background: var(--cream);
-    padding: 22px;
-    border-left: 5px solid var(--saffron);
-    border-radius: 8px;
-    font-weight: bold;
+.why-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-/* WHY US */
-
-.why-us {
-    background: #151515;
-    color: white;
+.why-card{
+    padding:28px 20px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    border-radius:16px;
+    transition:.3s;
 }
 
-.why-us .section-title p {
-    color: #cccccc;
+.why-card:hover{
+    transform:translateY(-7px);
+    background:rgba(242,140,0,.1);
 }
 
-.why-us .card {
-    color: #151515;
+.why-card .icon{
+    font-size:40px;
 }
 
-/* CONTACT */
-
-.contact {
-    background: var(--cream);
+.why-card h3{
+    margin-bottom:10px;
 }
 
-.contact-box {
-    max-width: 750px;
-    margin: auto;
-    background: white;
-    padding: 40px 25px;
-    text-align: center;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.why-card p{
+    color:#c7cdd2;
+    line-height:1.6;
+    font-size:15px;
 }
 
-.contact-box h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews-section{
+    background:var(--cream);
 }
 
-.contact-box p {
-    margin: 12px 0;
-    font-size: 18px;
+.review-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-/* FORM STYLES */
-
-.contact-form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
+.review-card{
+    background:#fff;
+    padding:30px 25px;
+    border-radius:17px;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+    position:relative;
+    text-align:center;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.google-label{
+    color:#4285f4;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:12px;
 }
 
-.form-group label {
-    font-weight: bold;
-    font-size: 14px;
+.stars{
+    color:#f5a400;
+    font-size:23px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.review-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+.review-card strong{
+    font-size:16px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-section{
+    background:#fff;
+}
+
+.location-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:25px;
+}
+
+.address-box{
+    background:var(--cream);
+    padding:35px;
+    border-radius:18px;
+    border-left:5px solid var(--orange);
+    box-shadow:0 7px 25px rgba(0,0,0,.06);
+}
+
+.address-box h3{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.address-box p{
+    font-size:17px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:15px;
+}
+
+.map-box{
+    border-radius:18px;
+    overflow:hidden;
+    min-height:380px;
+    box-shadow:0 7px 25px rgba(0,0,0,.12);
+}
+
+.map-box iframe{
+    width:100%;
+    height:100%;
+    min-height:380px;
+    border:0;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section{
+    background:
+    linear-gradient(rgba(255,248,237,.95),rgba(255,248,237,.95)),
+    url("https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+}
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    padding:45px 35px;
+    border-radius:22px;
+    box-shadow:0 10px 35px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.contact-box h3{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.contact-subtitle{
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+.contact-numbers{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:20px 0;
+}
+
+.number{
+    background:var(--cream);
+    padding:12px 18px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.email-box{
+    margin:15px 0;
+    color:#444;
+}
+
+.email-box a{
+    color:var(--orange);
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form{
+    max-width:700px;
+    margin:30px auto 10px;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group label{
+    font-weight:bold;
+    font-size:14px;
 }
 
 .form-group input,
-.form-group textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    width: 100%;
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #d5d9dd;
+    border-radius:9px;
+    font-size:15px;
+    outline:none;
+    background:#fff;
+    transition:.3s;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--orange);
+    box-shadow:0 0 0 3px rgba(242,140,0,.1);
 }
 
-/* FOOTER */
-
-footer {
-    background: #111111;
-    color: white;
-    text-align: center;
-    padding: 28px 15px;
+.form-group textarea{
+    resize:vertical;
+    min-height:120px;
 }
 
-footer span {
-    color: var(--saffron);
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#0b1116;
+    color:#fff;
+    padding:45px 20px 25px;
 }
 
-/* WHATSAPP BUTTON */
-
-.whatsapp {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-
-    width: 60px;
-    height: 60px;
-
-    background: #25D366;
-    color: white;
-
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 29px;
-    text-decoration: none;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.3);
-
-    z-index: 9999;
+.footer-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:35px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-/* MOBILE */
+.footer-column h3{
+    color:var(--orange);
+    margin-bottom:15px;
+    font-size:21px;
+}
 
-@media (max-width: 700px) {
+.footer-column h4{
+    margin-bottom:15px;
+}
 
-    nav {
-        flex-direction: column;
-        gap: 12px;
+.footer-column p{
+    color:#bdc4c9;
+    line-height:1.7;
+    margin:7px 0;
+    font-size:14px;
+}
+
+.footer-column a{
+    color:#bdc4c9;
+    display:block;
+    margin:9px 0;
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:var(--orange);
+}
+
+.footer-bottom{
+    text-align:center;
+    padding-top:22px;
+    color:#89929a;
+    font-size:13px;
+}
+
+.footer-bottom span{
+    color:var(--orange);
+}
+
+
+/* =========================================================
+   CLASSICAL WHATSAPP BUTTON
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    background:var(--green);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 7px 22px rgba(0,0,0,.3);
+    z-index:9999;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.whatsapp svg{
+    width:31px;
+    height:31px;
+    fill:#fff;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top{
+    position:fixed;
+    right:24px;
+    bottom:92px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#151515;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    z-index:999;
+    transition:.3s;
+}
+
+.back-top:hover{
+    background:var(--orange);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:950px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .vehicle-list{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    section {
-        padding: 55px 5%;
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .hero {
-        min-height: 85vh;
+    .about-grid{
+        grid-template-columns:1fr;
     }
 
-    .hero h1 {
-        font-size: 42px;
+    .location-grid{
+        grid-template-columns:1fr;
     }
 
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+        padding:14px 4%;
+    }
+
+    nav ul{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    .stats{
+        margin-top:0;
+    }
+
+    .stats-box{
+        grid-template-columns:1fr 1fr;
+        border-radius:0;
+    }
+
+    .stat{
+        border-bottom:1px solid var(--border);
+    }
+
+    .stat:nth-child(2){
+        border-right:none;
+    }
+
+    .stat strong{
+        font-size:24px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .route-list{
+        grid-template-columns:1fr;
+    }
+
+    .vehicle-list{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        padding:32px 18px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .whatsapp{
+        width:55px;
+        height:55px;
+        right:17px;
+        bottom:17px;
+    }
+
+    .back-top{
+        right:20px;
+        bottom:82px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+::selection{
+    background:var(--orange);
+    color:#fff;
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ======================================================
+     TOP BAR
+====================================================== -->
 
-<nav>
+<div class="topbar">
+
+    <div class="topbar-left">
+
+        <span>🚛 Professional Logistics & Transport</span>
+
+        <span>🇮🇳 All India Service</span>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <a href="tel:+919809737666">
+            📞 +91 9809737666
+        </a>
+
+        <a href="mailto:ftlcargocarriers@gmail.com">
+            ✉️ ftlcargocarriers@gmail.com
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
+<nav id="navbar">
 
     <div class="logo">
-        🚛 FTL CARGO CARRIERS
+        🚛 FTL <span>CARGO CARRIERS</span>
     </div>
 
     <ul>
@@ -400,11 +1241,25 @@ footer span {
         </li>
 
         <li>
+            <a href="#routes">Routes</a>
+        </li>
+
+        <li>
             <a href="#vehicles">Vehicles</a>
         </li>
 
         <li>
-            <a href="#contact">Contact</a>
+            <a href="#reviews">Reviews</a>
+        </li>
+
+        <li>
+            <a href="#location">Location</a>
+        </li>
+
+        <li>
+            <a href="#contact" class="nav-call">
+                Get Quote
+            </a>
         </li>
 
     </ul>
@@ -412,107 +1267,233 @@ footer span {
 </nav>
 
 
-<!-- HOME -->
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <section class="hero" id="home">
 
+    <div class="hero-slides">
+
+        <div class="hero-slide"></div>
+
+        <div class="hero-slide"></div>
+
+        <div class="hero-slide"></div>
+
+    </div>
+
+
     <div class="hero-content">
+
+        <div class="hero-badge">
+            🚛 TRUSTED TRANSPORT & LOGISTICS PARTNER
+        </div>
 
         <h1>
             FTL CARGO CARRIERS
         </h1>
 
         <h2>
-            ALL INDIA TRANSPORT SERVICES
+            PROFESSIONAL ALL INDIA TRANSPORT SERVICES
         </h2>
 
         <p>
-            🚛 Reliable Transport Solutions from all South Indian
-            Locations to anywhere Across India.
-        </p>
-
-        <p>
-            All types of goods and loads are accepted.
-        </p>
-
-        <a
-            href="#contact"
-            class="btn btn-primary">
-
-            Get Transport Quote
-
-        </a>
-
-        <a
-            href="#vehicles"
-            class="btn btn-dark">
-
-            View Vehicles
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-    <div class="section-title">
-
-        <h2>
-            About Us
-        </h2>
-
-        <p>
-            Your trusted transport partner
-        </p>
-
-    </div>
-
-
-    <div class="about">
-
-        <p>
-
-            <strong>
-                FTL Cargo Carriers
-            </strong>
-
-            provides reliable transport solutions
-            from all South Indian locations to
+            Reliable Full Truck Load and goods transportation
+            solutions from Bangalore and South India to
             destinations across India.
-
         </p>
 
         <p>
-
-            We accept all types of goods and loads
-            and provide suitable vehicles according
-            to your transportation requirements.
-
+            📦 All types of goods and loads accepted.
+            &nbsp; | &nbsp;
+            🚚 Multiple vehicle options available.
         </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                📋 Get Free Transport Quote
+            </a>
+
+            <a href="#vehicles" class="btn btn-dark">
+                🚛 View Vehicles
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ======================================================
+     STATS
+====================================================== -->
 
-<section id="services">
+<section class="stats">
+
+    <div class="stats-box">
+
+        <div class="stat">
+
+            <strong>Pan India</strong>
+
+            <span>Transport Network</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>7+</strong>
+
+            <span>Vehicle Options</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>FTL</strong>
+
+            <span>Full Truck Load</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>24/7</strong>
+
+            <span>Enquiry Support</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+
+<section class="about-section" id="about">
 
     <div class="section-title">
 
+        <div class="small-title">
+            About Company
+        </div>
+
         <h2>
-            Our Services
+            Your Trusted Transport Partner
         </h2>
 
         <p>
-            Reliable transportation solutions
-            for your business
+            Reliable logistics solutions designed around
+            your cargo requirements.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+
+                <strong>FTL Cargo Carriers</strong>
+                provides professional transport solutions
+                from Bangalore and South Indian locations
+                to destinations across India.
+
+            </p>
+
+            <p>
+
+                We provide regular transport services and
+                suitable vehicles for different types of
+                goods, loads and transportation requirements.
+
+            </p>
+
+            <p>
+
+                Our focus is dependable vehicle availability,
+                professional coordination and convenient
+                transport solutions for businesses and customers.
+
+            </p>
+
+
+            <div class="about-points">
+
+                <div class="about-point">
+                    ✓ Reliable Vehicle Availability
+                </div>
+
+                <div class="about-point">
+                    ✓ All India Transportation
+                </div>
+
+                <div class="about-point">
+                    ✓ Multiple Vehicle Sizes
+                </div>
+
+                <div class="about-point">
+                    ✓ Professional Service
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-image">
+
+            <div class="about-image-box">
+
+                <h3>
+                    FTL Cargo Carriers
+                </h3>
+
+                <p>
+                    Bangalore → All India
+                    Logistics & Transportation
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     SERVICES
+====================================================== -->
+
+<section class="services-section" id="services">
+
+    <div class="section-title">
+
+        <div class="small-title">
+            What We Do
+        </div>
+
+        <h2>
+            Our Transport Services
+        </h2>
+
+        <p>
+            Professional transportation solutions
+            for different cargo requirements.
         </p>
 
     </div>
@@ -533,7 +1514,7 @@ footer span {
 
             <p>
                 Reliable FTL transportation solutions
-                for your cargo requirements.
+                for complete truck-load requirements.
             </p>
 
         </div>
@@ -550,8 +1531,8 @@ footer span {
             </h3>
 
             <p>
-                We transport different types of
-                goods and loads across India.
+                Transportation solutions for different
+                types of commercial goods and loads.
             </p>
 
         </div>
@@ -568,8 +1549,8 @@ footer span {
             </h3>
 
             <p>
-                Transport solutions from South Indian
-                locations to anywhere across India.
+                Regular routes from Bangalore to major
+                destinations and across India.
             </p>
 
         </div>
@@ -586,8 +1567,8 @@ footer span {
             </h3>
 
             <p>
-                Dependable vehicle availability for
-                your transportation needs.
+                Dependable vehicle availability and
+                professional transport coordination.
             </p>
 
         </div>
@@ -598,50 +1579,70 @@ footer span {
 </section>
 
 
-<!-- VEHICLES -->
+<!-- ======================================================
+     ROUTES
+====================================================== -->
 
-<section
-    class="vehicles"
-    id="vehicles">
+<section class="routes-section" id="routes">
 
     <div class="section-title">
 
+        <div class="small-title">
+            Regular Routes
+        </div>
+
         <h2>
-            🚛 Vehicles Available
+            Bangalore → Major Destinations
         </h2>
 
         <p>
-            Vehicles available for different
-            cargo requirements
+            Regular transport services from Bangalore
+            to major states and destinations across India.
         </p>
 
     </div>
 
 
-    <div class="vehicle-list">
+    <div class="route-list">
 
-        <div class="vehicle">
-            🚛 Bolero Pickup
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Maharashtra
         </div>
 
-        <div class="vehicle">
-            🚛 14 Feet
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Gujarat
         </div>
 
-        <div class="vehicle">
-            🚛 20 Feet
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Haryana
         </div>
 
-        <div class="vehicle">
-            🚛 22 Feet
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Uttar Pradesh (UP)
         </div>
 
-        <div class="vehicle">
-            🚛 32 Feet Single Axle (SXL)
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Delhi
         </div>
 
-        <div class="vehicle">
-            🚛 32 Feet Multi-Axle (MXL)
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Punjab
+        </div>
+
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Himachal Pradesh
+        </div>
+
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Uttarakhand
+        </div>
+
+        <div class="route-card">
+            🚛 <span>Bangalore →</span> Assam
+        </div>
+
+        <div class="route-card">
+            🇮🇳 <span>Bangalore →</span> All Over India
         </div>
 
     </div>
@@ -649,27 +1650,142 @@ footer span {
 </section>
 
 
-<!-- WHY CHOOSE US -->
+<!-- ======================================================
+     VEHICLES
+====================================================== -->
 
-<section class="why-us">
+<section class="vehicles-section" id="vehicles">
 
     <div class="section-title">
+
+        <div class="small-title">
+            Fleet
+        </div>
+
+        <h2>
+            🚛 Vehicles Available
+        </h2>
+
+        <p>
+            Choose the suitable vehicle according to
+            your cargo and transportation requirements.
+        </p>
+
+    </div>
+
+
+    <div class="vehicle-list">
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚚
+            </div>
+
+            Bolero Pickup
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            14 FT
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            17 FT
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            19 FT
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            20 FT
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            22 FT
+
+        </div>
+
+
+        <div class="vehicle">
+
+            <div class="vehicle-icon">
+                🚛
+            </div>
+
+            32 FT MXL
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     WHY CHOOSE US
+====================================================== -->
+
+<section class="why-section">
+
+    <div class="section-title">
+
+        <div class="small-title">
+            Why Us
+        </div>
 
         <h2>
             Why Choose FTL Cargo Carriers?
         </h2>
 
         <p>
-            Transportation you can depend on
+            Transportation you can depend on.
         </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="why-grid">
 
 
-        <div class="card">
+        <div class="why-card">
 
             <div class="icon">
                 🇮🇳
@@ -680,14 +1796,14 @@ footer span {
             </h3>
 
             <p>
-                Transport from South Indian locations
-                to destinations across India.
+                Transport solutions from Bangalore
+                and South India to destinations across India.
             </p>
 
         </div>
 
 
-        <div class="card">
+        <div class="why-card">
 
             <div class="icon">
                 🚚
@@ -705,7 +1821,7 @@ footer span {
         </div>
 
 
-        <div class="card">
+        <div class="why-card">
 
             <div class="icon">
                 📦
@@ -716,8 +1832,26 @@ footer span {
             </h3>
 
             <p>
-                We accept different types of goods
-                and transportation loads.
+                Transportation solutions for
+                different commercial goods and loads.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🤝
+            </div>
+
+            <h3>
+                Professional Service
+            </h3>
+
+            <p>
+                Focused on reliable coordination,
+                vehicle availability and service.
             </p>
 
         </div>
@@ -728,20 +1862,209 @@ footer span {
 </section>
 
 
-<!-- CONTACT -->
+<!-- ======================================================
+     REVIEWS
+====================================================== -->
 
-<section
-    class="contact"
-    id="contact">
+<section class="reviews-section" id="reviews">
 
     <div class="section-title">
 
+        <div class="small-title">
+            Customer Feedback
+        </div>
+
         <h2>
-            Contact Us
+            ⭐ What Our Customers Say
         </h2>
 
         <p>
-            Get in touch for your transport requirements
+            Feedback from our customers.
+        </p>
+
+    </div>
+
+
+    <div class="review-grid">
+
+
+        <div class="review-card">
+
+            <div class="google-label">
+                ★ Google Customer
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Reliable transport service and good
+                communication. A convenient option
+                for regular transportation requirements.
+            </p>
+
+            <strong>
+                — Venkataramanan
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="google-label">
+                ★ Google Customer
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Good vehicle availability and helpful
+                service for long-distance transportation.
+            </p>
+
+            <strong>
+                — Armaan Khan
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="google-label">
+                ★ Google Customer
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Professional transport service from
+                Bangalore to other states.
+            </p>
+
+            <strong>
+                — Priya Reddy
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     LOCATION
+====================================================== -->
+
+<section class="location-section" id="location">
+
+    <div class="section-title">
+
+        <div class="small-title">
+            Find Us
+        </div>
+
+        <h2>
+            📍 Our Location
+        </h2>
+
+        <p>
+            Visit or contact FTL Cargo Carriers
+            at our Attibele office.
+        </p>
+
+    </div>
+
+
+    <div class="location-grid">
+
+
+        <div class="address-box">
+
+            <h3>
+                FTL Cargo Carriers
+            </h3>
+
+            <p>
+
+                📍 <strong>Address:</strong><br>
+
+                764/14, 764/15, Shop No. 7,<br>
+
+                First Floor, Near Toll Gate,<br>
+
+                Attibele, Bangalore - 562107
+
+            </p>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=FTL%20Cargo%20Carriers%2C%20764%2F14%2C%20764%2F15%2C%20Shop%20No.%207%2C%20First%20Floor%2C%20Near%20Toll%20Gate%2C%20Attibele%2C%20Bangalore%2C%20Karnataka%20562107"
+                target="_blank"
+                class="btn btn-primary">
+
+                🗺️ Open Google Maps
+
+            </a>
+
+
+            <br>
+
+
+            <a
+                href="tel:+919809737666"
+                class="btn btn-dark">
+
+                📞 Call Us
+
+            </a>
+
+        </div>
+
+
+        <div class="map-box">
+
+            <iframe
+                src="https://www.google.com/maps?q=FTL%20Cargo%20Carriers%2C%20764%2F14%2C%20764%2F15%2C%20Shop%20No.%207%2C%20First%20Floor%2C%20Near%20Toll%20Gate%2C%20Attibele%2C%20Bangalore%2C%20Karnataka%20562107&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="section-title">
+
+        <div class="small-title">
+            Contact Us
+        </div>
+
+        <h2>
+            📋 Get a Free Transport Quote
+        </h2>
+
+        <p>
+            Send your requirement and our team can
+            contact you regarding your transportation needs.
         </p>
 
     </div>
@@ -753,113 +2076,416 @@ footer span {
             FTL Cargo Carriers
         </h3>
 
-        <p>
-            🚛
-            <strong>
-                All India Transport Services
-            </strong>
-        </p>
-
-        <p>
-            📍 South India → Anywhere Across India
-        </p>
-
-        <p>
-            📞
-            <strong>
-                +91 9809737666
-            </strong>
+        <p class="contact-subtitle">
+            🚛 All India Transport & Logistics Services
         </p>
 
 
-        <!-- WHATSAPP -->
+        <!-- FORM -->
 
-        <a
-            href="https://wa.me/919809737666"
-            class="btn btn-primary"
-            target="_blank">
-
-            💬 WhatsApp Us
-
-        </a>
+        <form
+            action="https://formspree.io/f/xzepqprn"
+            method="POST"
+            class="contact-form">
 
 
-        <!-- PHONE -->
+            <div class="form-row">
 
-        <a
-            href="tel:+919809737666"
-            class="btn btn-dark">
+                <div class="form-group">
 
-            📞 Call Us
+                    <label for="name">
+                        Your Name
+                    </label>
 
-        </a>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
 
-        <!-- FORMSPREE INQUIRY FORM -->
+                </div>
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter mobile number"
+                        required>
+
+                </div>
+
             </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="vehicle">
+                        Vehicle Required
+                    </label>
+
+                    <select
+                        id="vehicle"
+                        name="vehicle">
+
+                        <option value="Not Sure">
+                            Not Sure
+                        </option>
+
+                        <option value="Bolero Pickup">
+                            Bolero Pickup
+                        </option>
+
+                        <option value="14 FT">
+                            14 FT
+                        </option>
+
+                        <option value="17 FT">
+                            17 FT
+                        </option>
+
+                        <option value="19 FT">
+                            19 FT
+                        </option>
+
+                        <option value="20 FT">
+                            20 FT
+                        </option>
+
+                        <option value="22 FT">
+                            22 FT
+                        </option>
+
+                        <option value="32 FT MXL">
+                            32 FT MXL
+                        </option>
+
+                    </select>
+
+                </div>
+
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="pickup">
+                        Pickup Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pickup"
+                        name="pickup"
+                        placeholder="Example: Bangalore"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="destination">
+                        Destination
+                    </label>
+
+                    <input
+                        type="text"
+                        id="destination"
+                        name="destination"
+                        placeholder="Example: Mumbai / Delhi"
+                        required>
+
+                </div>
+
             </div>
 
+
             <div class="form-group">
-                <label for="message">Transport Requirement / Message</label>
-                <textarea id="message" name="message" placeholder="Pickup location, drop location, and load details..." required></textarea>
+
+                <label for="message">
+                    Goods Details / Requirement
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Please mention goods type, approximate weight and any other requirements..."
+                    required></textarea>
+
             </div>
 
-            <button type="submit" class="btn btn-primary">Send Requirement</button>
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Transport Quote Request - FTL Cargo Carriers">
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                📩 Send Transport Requirement
+
+            </button>
+
+
         </form>
+
+
+        <hr
+            style="
+            margin:32px 0;
+            border:none;
+            border-top:1px solid #eee;
+            ">
+
+
+        <!-- DIRECT CONTACT -->
+
+        <h3>
+            Direct Contact
+        </h3>
+
+
+        <div class="contact-numbers">
+
+            <div class="number">
+                📞 +91 9809737666
+            </div>
+
+            <div class="number">
+                📞 +91 7200386871
+            </div>
+
+        </div>
+
+
+        <div class="email-box">
+
+            ✉️ Email:
+            <a href="mailto:ftlcargocarriers@gmail.com">
+                ftlcargocarriers@gmail.com
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <a
+                href="tel:+919809737666"
+                class="btn btn-dark">
+
+                📞 Call 9809737666
+
+            </a>
+
+
+            <a
+                href="tel:+917200386871"
+                class="btn btn-dark">
+
+                📞 Call 7200386871
+
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <a
+                href="https://wa.me/919809737666"
+                target="_blank"
+                class="btn btn-green">
+
+                WhatsApp 9809737666
+
+            </a>
+
+
+            <a
+                href="https://wa.me/917200386871"
+                target="_blank"
+                class="btn btn-green">
+
+                WhatsApp 7200386871
+
+            </a>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
-    <p>
+    <div class="footer-grid">
+
+
+        <div class="footer-column">
+
+            <h3>
+                🚛 FTL CARGO CARRIERS
+            </h3>
+
+            <p>
+                Professional All India Transport &
+                Logistics Services from Bangalore
+                and South India.
+            </p>
+
+            <p>
+                Reliable transportation solutions
+                for businesses and customers.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#vehicles">
+                Vehicles
+            </a>
+
+            <a href="#location">
+                Location
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Contact
+            </h4>
+
+            <p>
+                📍 764/14, 764/15, Shop No. 7,
+                First Floor, Near Toll Gate,
+                Attibele, Bangalore - 562107
+            </p>
+
+            <p>
+                📞 +91 9809737666
+            </p>
+
+            <p>
+                📞 +91 7200386871
+            </p>
+
+            <p>
+                ✉️ ftlcargocarriers@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
 
         © 2026
-
-        <span>
-            FTL Cargo Carriers
-        </span>
-
+        <span>FTL Cargo Carriers</span>
         — All Rights Reserved.
 
-    </p>
-
-    <p>
-        All India Transport Services
-    </p>
+    </div>
 
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ======================================================
+     FLOATING CLASSICAL WHATSAPP BUTTON
+====================================================== -->
 
 <a
     class="whatsapp"
     href="https://wa.me/919809737666"
     target="_blank"
-    title="Chat on WhatsApp">
+    title="Chat with FTL Cargo Carriers on WhatsApp"
+    aria-label="WhatsApp FTL Cargo Carriers">
 
-    💬
+
+    <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M19.11 17.2c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.8-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
+        <path d="M16.02 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.59 4.47 1.72 6.41L3.1 28.8l6.53-1.71a12.75 12.75 0 0 0 6.39 1.71h.01c7.06 0 12.8-5.74 12.8-12.8S23.08 3.2 16.02 3.2zm0 23.5h-.01c-2.03 0-4.02-.55-5.76-1.59l-.41-.24-3.88 1.02 1.04-3.78-.27-.39a10.65 10.65 0 1 1 9.29 4.98z"/>
+
+    </svg>
+
+</a>
+
+
+<!-- BACK TO TOP -->
+
+<a
+    href="#home"
+    class="back-top"
+    title="Back to top">
+
+    ↑
 
 </a>
 
 
 </body>
+
 </html>
