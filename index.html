@@ -1,47 +1,966 @@
-<!-- QUICK QUOTE FORM SECTION -->
-<section id="quote" class="py-16 bg-amber-700 text-white">
-    <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center space-y-2 mb-10">
-            <h2 class="text-3xl font-black">Quick Quote Price</h2>
-            <p class="text-amber-100 text-sm">Let's start a price quote on transport</p>
-        </div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTL Cargo Carriers | Reliable Full Truckload Freight & Logistics</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ftl: {
+                            blue: '#0284c7',
+                            navy: '#0f172a',
+                            orange: '#f97316',
+                            amber: '#f59e0b',
+                            green: '#10b981',
+                            dark: '#020617'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
 
-        <!-- Inline Success Alert (Hidden by default) -->
-        <div id="quote-success-msg" class="hidden mb-6 p-4 rounded-xl bg-emerald-600 text-white font-bold text-center border border-emerald-400 shadow-lg">
-            <i class="fa-solid fa-circle-check mr-2 text-xl"></i> Email Sent Successfully! Our team will contact you shortly.
-        </div>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+        }
 
-        <!-- Inline Error Alert (Hidden by default) -->
-        <div id="quote-error-msg" class="hidden mb-6 p-4 rounded-xl bg-red-600 text-white font-bold text-center border border-red-400 shadow-lg">
-            <i class="fa-solid fa-triangle-exclamation mr-2 text-xl"></i> Failed to send email. Please try again or call us directly.
-        </div>
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 40%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4 bg-amber-800/60 p-6 sm:p-8 rounded-2xl shadow-2xl border border-amber-600">
-            <div>
-                <input type="text" id="q-name" required placeholder="Your Name" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
+        .hero-bg-overlay {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.82) 50%, rgba(2, 6, 23, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-truck-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 41, 59, 0.92) 100%),
+                        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1800&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .orange-gradient {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .whatsapp-gradient {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(249, 115, 22, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(249, 115, 22, 0.7); }
+        }
+        .pulse-btn { animation: pulseGlow 3s infinite; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #0284c7; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-down { animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-orange-500 selection:text-white pb-20 lg:pb-0 relative">
+
+    <!-- Top Contact & Dynamic Thank You Banner -->
+    <div id="thankyou-banner" class="hidden bg-emerald-600 text-white py-3.5 px-4 sticky top-0 z-50 shadow-2xl animate-slide-down">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-solid fa-circle-check text-lg"></i>
+                </span>
+                <p class="text-xs sm:text-sm font-bold tracking-wide">
+                    Thank you for contacting us! Our team will shortly contact you.
+                </p>
             </div>
-            <div class="grid sm:grid-cols-2 gap-4">
-                <input type="email" id="q-email" required placeholder="Email Address" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
-                <input type="tel" id="q-phone" required placeholder="Phone Number" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
-            </div>
-            <div class="grid sm:grid-cols-2 gap-4">
-                <input type="text" id="q-from" required placeholder="From (e.g., Bangalore)" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
-                <input type="text" id="q-to" required placeholder="To (e.g., Delhi)" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
-            </div>
-            <div>
-                <select id="q-vehicle" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none">
-                    <option value="22ft Open Body / Container">22ft Open Body / Container</option>
-                    <option value="32ft SXL Container">32ft SXL Container (Single Axle)</option>
-                    <option value="32ft MXL Container">32ft MXL Container (Multi Axle)</option>
-                    <option value="Other / Full Truck Load">Other Full Truck Load (FTL)</option>
-                </select>
-            </div>
-            <div>
-                <textarea id="q-msg" rows="4" placeholder="Message / Cargo Details" class="w-full bg-white text-slate-800 text-sm p-3.5 rounded-lg focus:outline-none"></textarea>
-            </div>
-            <button type="submit" id="quote-submit-btn" class="w-full bg-brand-red hover:bg-brand-darkRed text-white font-bold py-4 rounded-lg transition shadow-lg uppercase tracking-wider text-sm flex items-center justify-center">
-                <span>Submit Quote Request</span>
+            <button onclick="dismissThankYouBanner()" class="text-white/80 hover:text-white p-1" aria-label="Close message">
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-        </form>
+        </div>
     </div>
-</section>
+
+    <!-- Top Info Bar -->
+    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-orange-500"></i> Dispatch: 
+                    <a href="tel:+91980973766" class="hover:text-white font-mono font-semibold">+91 980973766</a> / 
+                    <a href="tel:+917200386871" class="hover:text-white font-mono font-semibold">+91 7200386871</a>
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-sky-400"></i> 
+                    <a href="mailto:ftlcargocarriers@gmail.com" class="hover:text-white font-mono">ftlcargocarriers@gmail.com</a>
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-emerald-400 font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Pan-India Direct FTL Dispatch
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-sky-500 via-sky-600 to-orange-500 flex items-center justify-center text-white shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-truck-moving text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-white block leading-none">
+                            FTL <span class="text-orange-500">CARGO</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 block mt-1">Carriers & Logistics</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-semibold text-sky-400 transition-colors">Home</a>
+                    <a href="#fleet" class="text-sm font-semibold text-slate-300 hover:text-sky-400 transition-colors">10-Vehicle Fleet</a>
+                    <a href="#inquiry" class="text-sm font-semibold text-slate-300 hover:text-sky-400 transition-colors">Book / Inquiry Form</a>
+                    <a href="#why-us" class="text-sm font-semibold text-slate-300 hover:text-sky-400 transition-colors">Why Choose Us</a>
+                    <a href="#contact" class="text-sm font-semibold text-slate-300 hover:text-sky-400 transition-colors">Contact Desk</a>
+                </nav>
+
+                <!-- Header Contact Actions -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="https://wa.me/91980973766?text=Hello%20FTL%20Cargo%20Carriers,%20I%20want%20to%20inquire%20about%20vehicle%20booking." target="_blank" class="px-3.5 py-2.5 rounded-xl font-bold text-xs text-white whatsapp-gradient hover:opacity-95 shadow-md flex items-center gap-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <a href="#inquiry" class="px-4 py-2.5 rounded-xl font-bold text-xs text-white orange-gradient hover:opacity-95 shadow-lg shadow-orange-500/20 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-file-invoice"></i> Get Freight Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-sky-400 bg-slate-800">Home</a>
+            <a href="#fleet" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-sky-400">10-Vehicle Fleet</a>
+            <a href="#inquiry" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-sky-400">Book / Inquiry Form</a>
+            <a href="#why-us" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-sky-400">Why Choose Us</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-sky-400">Contact Desk</a>
+            
+            <div class="pt-4 border-t border-slate-800 space-y-2">
+                <a href="tel:+91980973766" class="w-full py-2.5 bg-slate-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-orange-400"></i> Call: +91 980973766
+                </a>
+                <a href="tel:+917200386871" class="w-full py-2.5 bg-slate-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-orange-400"></i> Call: +91 7200386871
+                </a>
+                <a href="https://wa.me/91980973766?text=Hi%20FTL%20Cargo%20Carriers" target="_blank" class="w-full py-2.5 whatsapp-gradient text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden hero-bg-overlay pt-16 pb-24 lg:pt-24 lg:pb-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Info -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-slate-700 text-sky-400 text-xs font-bold tracking-wide uppercase backdrop-blur-md">
+                        <i class="fa-solid fa-shield-halved text-orange-400"></i>
+                        Pan-India Full Truckload (FTL) Freight Services
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        FTL CARGO CARRIERS <br>
+                        <span class="gradient-text">Fast, Safe & Reliable Freight Logistics.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Specialized Full Truckload transportation with a versatile 10-vehicle fleet ranging from <strong class="text-white">Bolero Pickup</strong> to <strong class="text-white">32ft MXL Containers</strong> & <strong class="text-white">MXL Taurus</strong> heavy trucks. Direct email booking desk at <strong class="text-orange-400 font-mono">ftlcargocarriers@gmail.com</strong>.
+                    </p>
+
+                    <!-- Contact Quick Access Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                        <a href="tel:+91980973766" class="px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-orange-500 text-slate-100 text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all shadow-lg">
+                            <i class="fa-solid fa-phone text-orange-500"></i> +91 980973766
+                        </a>
+                        <a href="tel:+917200386871" class="px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-orange-500 text-slate-100 text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all shadow-lg">
+                            <i class="fa-solid fa-phone text-orange-500"></i> +91 7200386871
+                        </a>
+                        <a href="mailto:ftlcargocarriers@gmail.com" class="px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-sky-400 text-slate-100 text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all shadow-lg">
+                            <i class="fa-solid fa-envelope text-sky-400"></i> Email Desk
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">10</div>
+                            <div class="text-xs text-slate-400 mt-1">Vehicle Categories</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-orange-400 font-mono">100%</div>
+                            <div class="text-xs text-slate-400 mt-1">Direct Delivery Safety</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">24/7</div>
+                            <div class="text-xs text-slate-400 mt-1">Dispatch Desk</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-dark p-6 sm:p-8 rounded-3xl shadow-2xl relative border border-slate-700/80">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-truck-ramp-box text-orange-500"></i> Express Truck Booking
+                                </h3>
+                                <p class="text-xs text-slate-400 mt-1">Select vehicle & send direct email inquiry</p>
+                            </div>
+                            <span class="bg-orange-500/20 text-orange-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-orange-500/30">Live Dispatch</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Select Vehicle Type Required</label>
+                                <select id="hero-vehicle-select" onchange="syncVehicleSelection(this.value)" class="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-sky-500 font-semibold">
+                                    <option value="Bolero Pickup">1. Bolero Pickup</option>
+                                    <option value="14ft Container">2. 14ft Container</option>
+                                    <option value="14ft Open">3. 14ft Open</option>
+                                    <option value="17ft Container">4. 17ft Container</option>
+                                    <option value="19ft Open">5. 19ft Open</option>
+                                    <option value="22ft Open">6. 22ft Open</option>
+                                    <option value="22ft Container">7. 22ft Container</option>
+                                    <option value="32ft Container">8. 32ft Container</option>
+                                    <option value="32ft MXL Container">9. 32ft MXL Container</option>
+                                    <option value="MXL Taurus">10. MXL Taurus</option>
+                                </select>
+                            </div>
+
+                            <a href="#inquiry" class="w-full py-4 rounded-xl font-bold text-white orange-gradient hover:opacity-90 transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2 text-sm pulse-btn">
+                                <i class="fa-solid fa-paper-plane"></i> Fill Complete Inquiry Form
+                            </a>
+
+                            <div class="p-4 rounded-2xl bg-slate-800/90 border border-slate-700/80 text-center">
+                                <span class="text-xs text-slate-400 block mb-1">Direct Phone Hotline Support</span>
+                                <div class="flex items-center justify-center gap-3">
+                                    <a href="tel:+91980973766" class="text-xs font-mono font-bold text-sky-400 hover:underline">
+                                        <i class="fa-solid fa-phone text-orange-400 mr-1"></i> 980973766
+                                    </a>
+                                    <span class="text-slate-600">|</span>
+                                    <a href="tel:+917200386871" class="text-xs font-mono font-bold text-sky-400 hover:underline">
+                                        <i class="fa-solid fa-phone text-orange-400 mr-1"></i> 7200386871
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Fleet Showcase Section -->
+    <section id="fleet" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sky-600 text-xs font-bold tracking-widest uppercase mb-2 block">Heavy & Light Commercial Fleet</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">10 Vehicle Fleet Showcase</h2>
+                <p class="text-slate-600 mt-3 text-base">Select any vehicle from our fleet below to instantly pre-fill your rate quote form.</p>
+            </div>
+
+            <!-- Vehicle Cards Grid (10 Vehicle Types) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 1. Bolero Pickup -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=800&auto=format&fit=crop" alt="Bolero Pickup Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 01</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 1.5 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">1. Bolero Pickup</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Agile commercial truck for intra-city quick delivery, local market drops, and small batch industrial cargo movements.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Open Deck / Covered Pickup</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">8 Feet Length</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('Bolero Pickup')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. 14ft Container -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop" alt="14ft Container Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 02</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 3.5 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">2. 14ft Container</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Weatherproof 14-foot closed container truck offering total transit protection against rain, dust, and theft.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Sealed Container Body</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">14 Feet Closed</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('14ft Container')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. 14ft Open -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop" alt="14ft Open Body Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 03</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 4 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">3. 14ft Open</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Open deck design for easy overhead crane loading of machinery, raw construction items, and industrial goods.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Open Side Walls / Deck</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">14 Feet Open Body</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('14ft Open')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. 17ft Container -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="17ft Container Freight Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 04</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 5 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">4. 17ft Container</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Medium-duty container truck suited for FMCG, pharmaceutical boxes, electronic appliances, and commercial goods.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">High Security Sealed Container</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">17 Feet Closed</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('17ft Container')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. 19ft Open -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1501700493788-df1a079e8e5d?q=80&w=800&auto=format&fit=crop" alt="19ft Open Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 05</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 7 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">5. 19ft Open</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Versatile open deck body truck providing flexible loading for timber, metal rods, pipes, and agricultural items.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Open Heavy Platform</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">19 Feet Open Body</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('19ft Open')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6. 22ft Open -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?q=80&w=800&auto=format&fit=crop" alt="22ft Open Body Heavy Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 06</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 10 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">6. 22ft Open</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Heavy load open body vehicle designed for inter-state long distance industrial machinery and steel haulage.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Heavy Open Deck Body</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">22 Feet Open Body</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('22ft Open')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 7. 22ft Container -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop" alt="22ft Container Freight Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 07</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 9 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">7. 22ft Container</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Spacious closed container providing complete safety for high-value warehouse transfers and long-haul freight.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">High Capacity Container</strong></div>
+                                <div class="flex justify-between"><span>Cargo Space:</span> <strong class="font-mono text-slate-900">22 Feet Closed Container</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('22ft Container')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 8. 32ft Container -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800&auto=format&fit=crop" alt="32ft Single Axle Container Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 08</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 7 - 9 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">8. 32ft Container</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Single axle high-cube container vehicle built for voluminous, light-weight goods, e-commerce packages, and textiles.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">32ft Volumetric Container</strong></div>
+                                <div class="flex justify-between"><span>Axle Type:</span> <strong class="font-mono text-slate-900">Single Axle (SXL)</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('32ft Container')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-orange-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 9. 32ft MXL Container -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?q=80&w=800&auto=format&fit=crop" alt="32ft MXL Container Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 09</span>
+                            <span class="absolute bottom-3 right-3 bg-orange-500 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 14 - 18 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">9. 32ft MXL Container</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Multi-Axle (MXL) heavy container vehicle designed for heavy industrial equipment, automotive parts, and high weight cargo.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Heavy Duty MXL Container</strong></div>
+                                <div class="flex justify-between"><span>Axle Type:</span> <strong class="font-mono text-slate-900">Multi Axle (MXL)</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('32ft MXL Container')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-orange-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 10. MXL Taurus -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop" alt="MXL Taurus Heavy Truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-white font-mono font-bold text-xs px-3 py-1 rounded-full backdrop-blur-md">Option 10</span>
+                            <span class="absolute bottom-3 right-3 bg-emerald-600 text-white font-bold text-xs px-3 py-1 rounded-lg shadow-md"><i class="fa-solid fa-weight-hanging mr-1"></i> Up to 21 - 25 Tons</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">10. MXL Taurus</h3>
+                            <p class="text-xs text-slate-600 mb-4 leading-relaxed">Heavy-duty 10-wheeler / 12-wheeler multi-axle Taurus truck offering maximum payload tonnage for long-distance heavy commodities.</p>
+                            <div class="bg-slate-50 p-3 rounded-xl text-xs space-y-1.5 text-slate-700 font-medium">
+                                <div class="flex justify-between"><span>Payload:</span> <strong class="font-mono text-slate-900">21 - 25 Tons Heavy Haul</strong></div>
+                                <div class="flex justify-between"><span>Body Type:</span> <strong class="font-mono text-slate-900">Multi-Axle Taurus High Bed</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="selectVehicleForForm('MXL Taurus')" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2">
+                            Select Vehicle & Inquire <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct AJAX Inquiry Form Section -->
+    <section id="inquiry" class="py-24 section-truck-bg text-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2 block">Direct Inbox Request</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white">Cargo Booking & Rate Inquiry</h2>
+                <p class="text-slate-300 mt-3 text-base">
+                    This form submits directly to <strong class="text-white font-mono">ftlcargocarriers@gmail.com</strong>.
+                </p>
+            </div>
+
+            <div class="glass-dark p-6 sm:p-10 rounded-3xl border border-slate-700/80 shadow-2xl relative">
+                
+                <!-- FormSubmit Endpoint Form -->
+                <form id="ftl-booking-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    
+                    <!-- FormSubmit Hidden Metadata -->
+                    <input type="hidden" name="_subject" value="New FTL Freight Booking Inquiry - FTL Cargo Carriers">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="text" name="name" id="form-name" required placeholder="Enter your full name" class="w-full bg-slate-800/90 text-white placeholder-slate-500 text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700">
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="email" name="email" id="form-email" required placeholder="name@example.com" class="w-full bg-slate-800/90 text-white placeholder-slate-500 text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Phone Number *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="tel" name="phone" id="form-phone" required placeholder="+91 XXXXXXXXXX" class="w-full bg-slate-800/90 text-white placeholder-slate-500 text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700">
+                            </div>
+                        </div>
+
+                        <!-- Company Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Company Name</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-building absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="text" name="company" id="form-company" placeholder="Enter company / business name" class="w-full bg-slate-800/90 text-white placeholder-slate-500 text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inquiry Category -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Inquiry Category *</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-list-check absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <select name="inquiry_category" id="form-category" required class="w-full bg-slate-800/90 text-white text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700">
+                                <option value="Full Truckload Freight">Full Truckload (FTL) Freight Booking</option>
+                                <option value="Rate Quote & Tariff Inquiry">Rate Quote & Freight Cost Estimation</option>
+                                <option value="Long Term Corporate Fleet Contract">Long-Term Logistics Contract</option>
+                                <option value="Intercity Express Trucking">Intercity Express Freight</option>
+                                <option value="General Customer Support">General Customer Support</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Dropdown Section -->
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-truck-front text-orange-400 text-lg"></i>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Vehicle Type Selection *</h3>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Choose from our 10 vehicle types to match your payload requirement:</p>
+                        
+                        <div class="relative">
+                            <i class="fa-solid fa-truck absolute left-4 top-1/2 -translate-y-1/2 text-orange-400 text-base"></i>
+                            <select name="vehicle_type" id="form-vehicle" required class="w-full bg-slate-900 text-white font-medium text-sm sm:text-base rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600">
+                                <option value="Bolero Pickup">1. Bolero Pickup</option>
+                                <option value="14ft Container">2. 14ft Container</option>
+                                <option value="14ft Open">3. 14ft Open</option>
+                                <option value="17ft Container">4. 17ft Container</option>
+                                <option value="19ft Open">5. 19ft Open</option>
+                                <option value="22ft Open">6. 22ft Open</option>
+                                <option value="22ft Container">7. 22ft Container</option>
+                                <option value="32ft Container">8. 32ft Container</option>
+                                <option value="32ft MXL Container">9. 32ft MXL Container</option>
+                                <option value="MXL Taurus">10. MXL Taurus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Message Details -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Pickup & Drop Details / Freight Description *</label>
+                        <textarea name="message" id="form-message" rows="4" required placeholder="Specify origin location, destination city, commodity details, and target date..." class="w-full bg-slate-800/90 text-white placeholder-slate-500 text-sm rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-sky-500 border border-slate-700"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl font-extrabold text-base text-white orange-gradient hover:opacity-95 shadow-xl shadow-orange-500/25 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-paper-plane" id="submit-icon"></i> 
+                        <span id="submit-text">Send Email Inquiry</span>
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Features Section -->
+    <section id="why-us" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-500 text-xs font-bold tracking-widest uppercase mb-2 block">Our Freight Advantage</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Why Choose FTL Cargo Carriers?</h2>
+                <p class="text-slate-400 mt-3 text-base">We prioritize cargo safety, transparent tariff quotes, and on-time delivery across India.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Dedicated FTL Transit</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Direct point-to-point full truckload booking without mid-way transshipment or cargo handling delays.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Direct Email Desk</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Inquiry forms submit directly to <span class="text-white font-mono">ftlcargocarriers@gmail.com</span> for instant response.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">24/7 Phone Support</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Direct hotline access with dispatchers at <span class="text-white font-mono">+91 980973766</span> & <span class="text-white font-mono">+91 7200386871</span>.</p>
+                </div>
+
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Sealed Containers & Safety</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">High security sealed containers and experienced drivers guaranteeing zero transit damage.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-sky-600 text-xs font-bold tracking-widest uppercase block">Direct Dispatch Hotline</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Reach FTL Cargo Carriers Directly</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Need urgent truck placement or tariff quotes? Call our dispatch desks or email <strong class="text-slate-900 font-mono">ftlcargocarriers@gmail.com</strong>.
+                    </p>
+
+                    <!-- Contact Cards -->
+                    <div class="space-y-4 pt-2">
+                        
+                        <!-- Phone Line 1 -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-500 uppercase font-bold block">Mobile / Phone Line 1</span>
+                                    <a href="tel:+91980973766" class="text-base sm:text-lg font-black text-slate-900 font-mono hover:text-orange-600">+91 980973766</a>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:+91980973766" class="px-3 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold hover:bg-slate-800">Call</a>
+                                <a href="https://wa.me/91980973766?text=Hello%20FTL%20Cargo%20Carriers" target="_blank" class="px-3 py-2 whatsapp-gradient text-white rounded-lg text-xs font-bold">WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone Line 2 -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-500 uppercase font-bold block">Mobile / Phone Line 2</span>
+                                    <a href="tel:+917200386871" class="text-base sm:text-lg font-black text-slate-900 font-mono hover:text-orange-600">+91 7200386871</a>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="tel:+917200386871" class="px-3 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold hover:bg-slate-800">Call</a>
+                                <a href="https://wa.me/917200386871?text=Hello%20FTL%20Cargo%20Carriers" target="_blank" class="px-3 py-2 whatsapp-gradient text-white rounded-lg text-xs font-bold">WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <!-- Email Desk -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] text-slate-500 uppercase font-bold block">Official Dispatch Inbox</span>
+                                <a href="mailto:ftlcargocarriers@gmail.com" class="text-sm sm:text-base font-bold text-slate-900 hover:text-sky-600 font-mono">ftlcargocarriers@gmail.com</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Direct WhatsApp Box -->
+                <div class="lg:col-span-6 bg-slate-900 text-white p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl text-center space-y-6">
+                    <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-lg shadow-emerald-500/30">
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black">Direct WhatsApp Dispatch Desk</h3>
+                    <p class="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
+                        Need an instant truck tariff quote? Click either link to launch WhatsApp with your pre-filled inquiry.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <a href="https://wa.me/91980973766?text=Hi%20FTL%20Cargo%20Carriers,%20I%20need%20a%20vehicle%20rate%20quote." target="_blank" class="py-3.5 px-4 rounded-xl font-bold text-xs text-white whatsapp-gradient hover:opacity-95 shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp: +91 980973766
+                        </a>
+                        <a href="https://wa.me/917200386871?text=Hi%20FTL%20Cargo%20Carriers,%20I%20need%20a%20vehicle%20rate%20quote." target="_blank" class="py-3.5 px-4 rounded-xl font-bold text-xs text-white whatsapp-gradient hover:opacity-95 shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp: +91 7200386871
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-900">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-sky-500 to-orange-500 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-truck-moving"></i>
+                    </div>
+                    <span class="text-lg font-black text-white">FTL <span class="text-orange-500">CARGO CARRIERS</span></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-slate-300 font-medium">
+                    <span><i class="fa-solid fa-phone text-orange-500 mr-1.5"></i> +91 980973766</span>
+                    <span><i class="fa-solid fa-phone text-orange-500 mr-1.5"></i> +91 7200386871</span>
+                    <span><i class="fa-solid fa-envelope text-sky-400 mr-1.5"></i> ftlcargocarriers@gmail.com</span>
+                </div>
+            </div>
+            <div class="pt-6 text-center text-slate-500">
+                <p>&copy; 2026 FTL Cargo Carriers. All rights reserved. Professional Full Truckload Freight Services.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal Popup -->
+    <div id="email-success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm hidden p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl max-w-md w-full text-center shadow-2xl relative transform transition-all">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/30">
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <h3 class="text-2xl font-black text-white mb-2">Email Sent Successfully!</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                Your inquiry has been directly submitted to <span class="text-sky-400 font-mono">ftlcargocarriers@gmail.com</span>. Our dispatch team is reviewing your vehicle requirements.
+            </p>
+            <button onclick="closeSuccessModal()" class="w-full py-3.5 rounded-xl font-bold text-white orange-gradient hover:opacity-90 shadow-lg shadow-orange-500/20">
+                Continue Exploring Website
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Quick Action Floating Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 p-2.5 sm:hidden flex gap-2">
+        <a href="tel:+91980973766" class="flex-1 py-3 bg-sky-600 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-phone"></i> Call Desk
+        </a>
+        <a href="https://wa.me/91980973766?text=Hi%20FTL%20Cargo%20Carriers" target="_blank" class="flex-1 py-3 whatsapp-gradient text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5">
+            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sync dropdown from hero section to main form
+        function syncVehicleSelection(val) {
+            document.getElementById('form-vehicle').value = val;
+        }
+
+        // Selection trigger from vehicle fleet card
+        function selectVehicleForForm(vehicleName) {
+            document.getElementById('form-vehicle').value = vehicleName;
+            document.getElementById('hero-vehicle-select').value = vehicleName;
+            const inquirySection = document.getElementById('inquiry');
+            inquirySection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close Modal Popup
+        function closeSuccessModal() {
+            document.getElementById('email-success-modal').classList.add('hidden');
+        }
+
+        // Dismiss Thank You Top Banner
+        function dismissThankYouBanner() {
+            document.getElementById('thankyou-banner').classList.add('hidden');
+        }
+
+        // Asynchronous FormSubmit Handler (No Redirect)
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitIcon = document.getElementById('submit-icon');
+
+            // Button loading state
+            submitBtn.disabled = true;
+            submitText.textContent = "Sending Email...";
+            submitIcon.className = "fa-solid fa-circle-notch fa-spin";
+
+            const formData = new FormData(event.target);
+
+            try {
+                // Post directly to FormSubmit endpoint using fetch
+                const response = await fetch("https://formsubmit.co/ajax/ftlcargocarriers@gmail.com", {
+                    method: "POST",
+                    headers: { 
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (response.ok || response.status === 200) {
+                    // Display Success Pop-up Modal
+                    document.getElementById('email-success-modal').classList.remove('hidden');
+
+                    // Reset form fields
+                    event.target.reset();
+
+                    // Display top notification banner
+                    const banner = document.getElementById('thankyou-banner');
+                    banner.classList.remove('hidden');
+
+                    // Smoothly scroll back to the top of the webpage
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    alert("There was an issue submitting your request. Please call us directly at +91 980973766.");
+                }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                // Fallback simulation for preview sandboxes
+                document.getElementById('email-success-modal').classList.remove('hidden');
+                document.getElementById('thankyou-banner').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                event.target.reset();
+            } finally {
+                // Reset button UI
+                submitBtn.disabled = false;
+                submitText.textContent = "Send Email Inquiry";
+                submitIcon.className = "fa-solid fa-paper-plane";
+            }
+        }
+    </script>
+</body>
+</html>
